@@ -6,4 +6,6 @@ ranger/.config/ranger/colorschemes/__init__.py
 ranger/.config/ranger/colorschemes/__pycache__/
 ranger/.config/ranger/history
 ranger/.config/ranger/tagged
+ssh/.ssh/id_*
+ssh/.ssh/known_hosts
 vim/.vim/bundle/
