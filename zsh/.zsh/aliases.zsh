@@ -62,7 +62,7 @@ alias rusto="toilet -t -f rusto"
 alias rustofat="toilet -t -f rustofat"
 alias pacman="sudo pacman"
 alias update="pacman-colors && yaourt -Syua"
-alias systemctl="sudo systemctl"
+#alias systemctl="sudo systemctl"
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 alias todo="bash ~/code/sys/todo"
 alias record="ffmpeg -f x11grab -s 1366x768 -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y" #pass a filename
@@ -75,14 +75,14 @@ email() {
 	echo $3 | mutt -s $2 $1
 }
 # colorized cat
-c() {
+ccat() {
   for file in "$@"
   do
     pygmentize -O style=sourcerer -f console256 -g "$file" 
   done
 }
 # colorized less
-l() {
+cless() {
   pygmentize -O style=sourcerer -f console256 -g $1 | less -r 
 }
 # read markdown files like manpages
