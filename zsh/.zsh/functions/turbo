@@ -1,0 +1,14 @@
+if [[ "$1" = "on" ]]; then
+  echo 0 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo
+  echo "Turbo Boost is now on"
+elif [[ "$1" = "off" ]]; then
+  echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo
+  echo "Turbo Boost is now off"
+else
+  if [[ "$(< /sys/devices/system/cpu/intel_pstate/no_turbo)" = "0" ]]; then
+    echo "Turbo Boost is on"
+  elif [[ "$(< /sys/devices/system/cpu/intel_pstate/no_turbo)" = "1" ]]; then
+    echo "Turbo Boost is off"
+  fi
+  echo "Do you want to turn Intel Turbo Boost on or off?"
+fi

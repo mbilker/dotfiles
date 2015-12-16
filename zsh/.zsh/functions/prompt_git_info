@@ -1,21 +1,38 @@
 if [ -n "$__CURRENT_GIT_BRANCH" ]; then
-    local s="${USER_LEVEL}-[%F{white}"
-    s+="$__CURRENT_GIT_BRANCH"
-    case "$__CURRENT_GIT_BRANCH_STATUS" in
-        ahead)
-        s+="↑"
-        ;;
-        diverged)
-        s+="↕"
-        ;;
-        behind)
-        s+="↓"
-        ;;
-    esac
-    if [ -n "$__CURRENT_GIT_BRANCH_IS_DIRTY" ]; then
-        s+="⚡"
+  local ref dirty mode repo_path color
+
+  repo_path=$(git rev-parse --git-dir 2>/dev/null)
+
+  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+    dirty=$(parse_git_dirty)
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
+    if [[ -n $dirty ]]; then
+    #  prompt_segment yellow black
+      color=%F{yellow}
+    else
+    #  prompt_segment green black
+      color=%F{green}
     fi
-    s+="${USER_LEVEL}]"
- 
-    printf "%s%s" $s
+
+    if [[ -e "${repo_path}/BISECT_LOG" ]]; then
+      mode=" <B>"
+    elif [[ -e "${repo_path}/MERGE_HEAD" ]]; then
+      mode=" >M<"
+    elif [[ -e "${repo_path}/rebase" || -e "${repo_path}/rebase-apply" || -e "${repo_path}/rebase-merge" || -e "${repo_path}/../.dotest" ]]; then
+      mode=" >R>"
+    fi
+
+    setopt promptsubst
+    autoload -Uz vcs_info
+
+    zstyle ':vcs_info:*' enable git
+    zstyle ':vcs_info:*' get-revision true
+    zstyle ':vcs_info:*' check-for-changes true
+    zstyle ':vcs_info:*' stagedstr '+'
+    zstyle ':vcs_info:*' unstagedstr '●'
+    zstyle ':vcs_info:*' formats ' %u%c'
+    zstyle ':vcs_info:*' actionformats ' %u%c'
+    vcs_info
+    echo -n "${USER_LEVEL}-[${color}${ref/refs\/heads\//}${mode}${vcs_info_msg_0_%% }${USER_LEVEL}]"
+  fi
 fi

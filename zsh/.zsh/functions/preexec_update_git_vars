@@ -1,4 +1,4 @@
-case "$1" in 
+case "" in 
     git*)
     __EXECUTED_GIT_COMMAND=1
     ;;
