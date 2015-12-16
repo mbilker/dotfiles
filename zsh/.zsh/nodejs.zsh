@@ -14,9 +14,6 @@
 # ░▓▓▓▓▓▓▓▓▓▓
 # ░░░░░░░░░░
 #
-#█▓▒░ node version manager
-source ~/.nvm/nvm.sh
-
 #█▓▒░ aliases
 alias node="sudo node"
 alias npm="sudo npm"
