@@ -3390,7 +3390,7 @@ fi
 #	infoDisplay
 #	exit 0
 #fi
-Win_theme='greybeard'
+#Win_theme='greybeard'
 for i in "${display[@]}"; do
 	if [[ $i =~ wm ]]; then
 		 ! [[ $WM  ]] && detectwm;
