@@ -15,7 +15,5 @@
 # ░░░░░░░░░░
 #
 #█▓▒░ aliases
-alias node="sudo node"
-alias npm="sudo npm"
-alias npminstall="sudo rm -rf node_modules && sudo npm cache clear && sudo npm cache clean && npm install"
-# alias npminstall="sudo rm -rf node_modules && sudo npm cache clear && sudo npm cache clean && sudo PYTHON=/usr/bin/python2 npm install"
+alias npminstall="rm -rf node_modules && npm cache clear && npm cache clean && npm install"
+# alias npminstall="rm -rf node_modules && npm cache clear && npm cache clean && env PYTHON=/usr/bin/python2 npm install"
