@@ -19,4 +19,4 @@
 export SSH_KEY_PATH="~/.ssh/id_ed25519"
 
 #█▓▒░ funtoo keychain
-eval `keychain -q --eval ~/.ssh/id_ed25519`
+eval `keychain --eval ~/.ssh/id_ed25519`
