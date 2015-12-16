@@ -124,6 +124,10 @@ uninstall i3 config
 
 etc, etc, etc...
 
+```
+sudo stow figlet -t /usr/share/figlet
+```
+
 #my shell
 i prefer a minimal setup, and choose to interact with my operating system via the so-called "terminal" or "command line", (read that quoting sarcastically) over a gui interface 2 times out of 3. with the web browser and video player among the noted outliers. in my opinion, using your computer should be a very personal experience. your colors, aliases, key-bindings, etc meticulously crafted to your exacting specifications. so for me, the unix shell is the most important part of my environment.
 
