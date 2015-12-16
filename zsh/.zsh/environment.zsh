@@ -7,12 +7,13 @@
 #  ██████ ██████ ░██  ░██ 
 # ░░░░░░ ░░░░░░  ░░   ░░  
 #
-#  ▓▓▓▓▓▓▓▓▓▓
-# ░▓ author ▓ xero <x@xero.nu>
-# ░▓ code   ▓ http://code.xero.nu/dotfiles
-# ░▓ mirror ▓ http://git.io/.files
-# ░▓▓▓▓▓▓▓▓▓▓
-# ░░░░░░░░░░
+#  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+# ░▓ about           ▓ custom linux config files
+# ░▓ author          ▓ mbilker <me@mbilker.us>
+# ░▓ original author ▓ xero <x@xero.nu>
+# ░▓ code            ▓ https://github.com/mbilker/dotfiles
+# ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░░░░░░░░░░
 #
 #█▓▒░ timestamps
 #HIST_STAMPS=mm/dd/yyyy
