@@ -16,11 +16,11 @@
 # ░░░░░░░░░░
 #
 #█▓▒░ oh-my-zsh initialization 
-ZSHC="$(dirname "${BASH_SOURCE:-$0}")"
-ZSH_CUSTOM="$ZSHC/custom"
+ZSH_CUSTOM="$HOME/.zsh/custom"
+ZSH="$HOME/.oh-my-zsh"
 
 COMPLETION_WAITING_DOTS=true
 
 plugins=(git archlinux)
 
-source "$HOME/.oh-my-zsh/oh-my-zsh.sh"
+source "$ZSH/oh-my-zsh.sh"
