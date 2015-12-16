@@ -7,15 +7,16 @@
 #  ██████ ██████ ░██  ░██ 
 # ░░░░░░ ░░░░░░  ░░   ░░  
 #
-#  ▓▓▓▓▓▓▓▓▓▓
-# ░▓ author ▓ xero <x@xero.nu>
-# ░▓ code   ▓ http://code.xero.nu/dotfiles
-# ░▓ mirror ▓ http://git.io/.files
-# ░▓▓▓▓▓▓▓▓▓▓
-# ░░░░░░░░░░
+#  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+# ░▓ about           ▓ custom linux config files
+# ░▓ author          ▓ mbilker <me@mbilker.us>
+# ░▓ original author ▓ xero <x@xero.nu>
+# ░▓ code            ▓ https://github.com/mbilker/dotfiles
+# ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░░░░░░░░░░
 #
 #█▓▒░ ssh keys
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+export SSH_KEY_PATH="~/.ssh/id_ed25519"
 
 #█▓▒░ funtoo keychain
-eval `keychain -q --eval ~/.ssh/id_rsa`
+eval `keychain -q --eval ~/.ssh/id_ed25519`
