@@ -8,17 +8,15 @@
 ░░██████░░██████   ░░██   ░██  ░██ ███░░██████ ██████ 
  ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░  
  
-  ▓▓▓▓▓▓▓▓▓▓
- ░▓ about  ▓ custom linux config files
- ░▓ author ▓ xero <x@xero.nu>
- ░▓ code   ▓ http://code.xero.nu/dotfiles
- ░▓ mirror ▓ http://git.io/.files
- ░▓▓▓▓▓▓▓▓▓▓
- ░░░░░░░░░░
+  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ ░▓ about           ▓ custom linux config files
+ ░▓ author          ▓ mbilker <me@mbilker.us>
+ ░▓ original author ▓ xero <x@xero.nu>
+ ░▓ code            ▓ https://github.com/mbilker/dotfiles
+ ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ ░░░░░░░░░░░░░░░░░░░
 
- awesome        > awesome wm config and ghost theme
  bin            > system automation scripts
- compton        > minimal composite config for opacity
  figlet         > custom 3d font
  fonts          > configs for gohu and other bitmap fonts
  fun            > term color, sys info, and other misc scripts
@@ -27,7 +25,6 @@
  irssi          > nixers irc theme
  mc             > midnight commander ui colors
  mpd            > music player daemon setup
- mutt           > minimal mutt setup
  ncmpcpp        > ncurses mpc++ ui/color settings
  pacman         > pacman colors and progress bar animations
  previews       > unixporn screenshots
@@ -42,7 +39,6 @@
  urxvt          > sourcerer terminal colors and keyboard settings
  vim            > wizard status bar and sourcerer color scheme
  wallpaper      > the cool desktop background images i use
- xmodmap        > global vi/m movement keys with caps+hjkl
  zsh            > zshell settings, aliases, and custom prompts
 ```
 
@@ -81,11 +77,11 @@ by default the stow command will create symlinks for files in the parent directo
 
 to install most of my configs you execute the stow command with the folder name as the only argument. 
 
-to install my **herbstluft** theme _greybeard_ use the command:
+to install my **i3** config use the command:
 
-`stow herbstluftwm`
+`stow i3`
 
-this will symlink files to `~/.config/herbstluftwm` and various other places.
+this will symlink files to `~/.config/i3` and various other places.
 
 but you can override the default behavior and symlink files to another location with the `-t` (target) argument flag. 
 
@@ -104,7 +100,7 @@ navigate to your home directory
 
 clone the repo:
 
-`git clone http://git.xero.nu/dotfiles.git`
+`git clone https://github.com/mbilker/dotfiles.git`
 
 enter the dotfiles directory
 
@@ -118,23 +114,20 @@ install zsh settings for the root user
 
 `sudo stow zsh -t /root`
 
-install awesomewm theme
+install i3 config
 
-`stow awesome`
+`stow i3`
 
-uninstall awesome theme
+uninstall i3 config
 
-`stow -D awesome`
-
-install herbstluftwm
-
-`stow herbstluftwm`
+`stow -D i3`
 
 etc, etc, etc...
 
 #my shell
 i prefer a minimal setup, and choose to interact with my operating system via the so-called "terminal" or "command line", (read that quoting sarcastically) over a gui interface 2 times out of 3. with the web browser and video player among the noted outliers. in my opinion, using your computer should be a very personal experience. your colors, aliases, key-bindings, etc meticulously crafted to your exacting specifications. so for me, the unix shell is the most important part of my environment.
 
+**TODO:** update previews with my own
 ![](https://raw.githubusercontent.com/xero/dotfiles/master/previews/xero_shell.gif)
 
 my terminal emulator of choice is the lightweight, unicode, 256 color [urxvt](http://linux.die.net/man/1/urxvt). i use [zsh](http://linux.die.net/man/1/zsh) as my interactive shell. it's an extensible, bash like shell with awesome completion and correction engines. i manage multiple shell sessions with [tmux](http://linux.die.net/man/1/tmux). it's a feature packed terminal multiplexer with support for buffers, split windows, detached local and remote sessions, etc. i'm a member of the cult of [vim](http://linux.die.net/man/1/vim). sing phrases to the third reincarnation of the glorious ed! lel. [mpd](http://linux.die.net/man/1/mpd) is my music server and i use [ncmpcpp](http://ncmpcpp.rybczak.net/) as it's frontend. my configs for [urxvt](http://git.io/.urxvt), [zsh](http://git.io/.zsh), [tmux](http://git.io/.tmux), [vim](http://git.io/.vim), [mpd](http://git.io/.mpd) and [ncmpcpp](http://git.io/.ncmpcpp) shown above feature my [sourcerer](http://sourcerer.xero.nu) color scheme.
@@ -154,6 +147,7 @@ when you learn vim it's best to use a more vanilla config. if helps you focus on
 - [fugitive](https://github.com/tpope/vim-fugitive) - fast git integration
 
 #previews
+**TODO:** update previews with my own
 ![](https://raw.githubusercontent.com/xero/dotfiles/master/previews/coils.png)
 - [herbstluftwm](http://git.io/.herbstluftwm)
 - [urxvt](http://git.io/.urxvt)
