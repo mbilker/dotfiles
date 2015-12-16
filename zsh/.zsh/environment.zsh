@@ -19,8 +19,9 @@
 #HIST_STAMPS=mm/dd/yyyy
 
 #█▓▒░ paths
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/.gopath/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
+export GOPATH=$HOME/.gopath
 
 #█▓▒░ preferred editor for local and remote sessions
 export EDITOR=vim
