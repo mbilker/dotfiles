@@ -1,5 +1,6 @@
 icons/
 mpd/.mpd/log
+mpd/.mpd/pid
 mpd/.mpd/state
 ncmpcpp/.ncmpcpp/error.log
 ranger/.config/ranger/bookmarks
