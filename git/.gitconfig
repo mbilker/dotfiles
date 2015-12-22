@@ -9,7 +9,11 @@
 	s = status -s
 	c = commit
 	unstage = reset HEAD
+[merge]
+	log = true
 [color]
 	ui = auto
+[apply]
+	whitespace = fix
 [push]
 	default = simple
