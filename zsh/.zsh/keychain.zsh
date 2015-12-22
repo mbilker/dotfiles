@@ -19,4 +19,7 @@
 export SSH_KEY_PATH="~/.ssh/id_ed25519"
 
 #█▓▒░ funtoo keychain
-eval `keychain --eval ~/.ssh/id_ed25519`
+if [[ "$EUID" -ne "0" ]]
+then
+  eval `keychain --eval ~/.ssh/id_ed25519`
+fi

@@ -126,6 +126,10 @@ etc, etc, etc...
 
 ```
 sudo stow figlet -t /usr/share/figlet
+sudo stow pygments -t /
+sudo mv /etc/pacman.conf /root/pacman.conf.backup
+sudo stow pacman -t /
+
 ```
 
 #my shell
