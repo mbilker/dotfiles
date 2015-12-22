@@ -138,6 +138,7 @@ if 1 " boolean for plugin loading
   Plugin 'itchyny/lightline.vim'
   Plugin 'tpope/vim-fugitive'
   Plugin 'jelera/vim-javascript-syntax'
+  Plugin 'kchmck/vim-coffee-script'
   call vundle#end()
   filetype plugin indent on
 
