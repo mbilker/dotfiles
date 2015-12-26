@@ -15,4 +15,4 @@
 # ░░░░░░░░░░
 #
 #█▓▒░ minial prompt
-PROMPT='${USER_LEVEL}[%F{white}%~${USER_LEVEL}]$(prompt_git_info)── -%f '
+PROMPT='${USER_LEVEL}$(user_host_info)[%F{white}%~${USER_LEVEL}]$(prompt_git_info)── -%f '
