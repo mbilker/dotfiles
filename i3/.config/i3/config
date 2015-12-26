@@ -27,6 +27,8 @@ bindsym control+Shift+4 exec "sleep 0.2; scrot -q 100 -s '/home/mbilker/Pictures
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn Terminus-9" --term=/usr/bin/termite --usage-log=/home/mbilker/.local/share/j4-dmenu-desktop.log
 
+bindsym Pause exec xset dpms force standby
+
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -93,10 +95,9 @@ bar {
 
 exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 exec /usr/bin/gnome-keyring-daemon
-exec /usr/bin/keychain ~/.ssh/id_ed25519
+exec /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
 exec /usr/bin/udiskie
 exec /usr/bin/nm-applet
 exec /usr/bin/blueman-applet
-#exec /usr/bin/cmst -m
 exec /usr/bin/dropbox
 exec /usr/bin/feh --bg-max --randomize --recursive ~/.wallpaper
