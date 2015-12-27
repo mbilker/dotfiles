@@ -16,4 +16,6 @@
 # ░░░░░░░░░░
 #
 #█▓▒░ import vte profile file for termite
-source /etc/profile.d/vte.sh
+if [[ "$OSTYPE" = "linux"* ]]; then
+  source /etc/profile.d/vte.sh
+fi

@@ -17,4 +17,8 @@
 # ░░░░░░░░░░░░░░░░░░
 #
 #█▓▒░ dircolors import
-eval `dircolors ~/.dircolors`
+if [[ "$OSTYPE" = "freebsd"* ]]; then
+  eval `gdircolors ~/.dircolors`
+else
+  eval `dircolors ~/.dircolors`
+fi

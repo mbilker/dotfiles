@@ -15,7 +15,11 @@
 # ░░░░░░░░░░
 #
 #█▓▒░ source the plugin https://github.com/zsh-users/zsh-syntax-highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ "$OSTYPE" = "freebsd"* ]]; then
+  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 #█▓▒░ color overrides
 #ZSH_HIGHLIGHT_STYLES[default]='none'

@@ -23,6 +23,11 @@ export PATH=$HOME/bin:$HOME/.gopath/bin:`ruby -rubygems -e 'puts Gem.user_dir'`/
 #export MANPATH=/usr/local/man:$MANPATH
 export GOPATH=$HOME/.gopath
 
+#█▓▒░ set term variable explictly on freebsd
+if [[ "$OSTYPE" = "freebsd"* ]] && [ "x${TERM}" = "xxterm-termite" ]; then
+  export TERM="xterm-256color"
+fi
+
 #█▓▒░ preferred editor for local and remote sessions
 export EDITOR=vim
 export VISUAL=vim
