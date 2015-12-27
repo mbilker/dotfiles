@@ -24,7 +24,7 @@ export PATH=$HOME/bin:$HOME/.gopath/bin:`ruby -rubygems -e 'puts Gem.user_dir'`/
 export GOPATH=$HOME/.gopath
 
 #█▓▒░ set term variable explictly on freebsd
-if [[ "$OSTYPE" = "freebsd"* ]] && [ "x${TERM}" = "xxterm-termite" ]; then
+if [[ "$(uname -s)" == "FreeBSD" ]] && [[ "${TERM}" == "xterm-termite" ]]; then
   export TERM="xterm-256color"
 fi
 

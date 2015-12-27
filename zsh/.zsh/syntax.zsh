@@ -15,7 +15,7 @@
 # ░░░░░░░░░░
 #
 #█▓▒░ source the plugin https://github.com/zsh-users/zsh-syntax-highlighting
-if [[ "$OSTYPE" = "freebsd"* ]]; then
+if [[ "$(uname -s)" == "FreeBSD" ]]; then
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
