@@ -16,9 +16,11 @@
 # ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 # ░░░░░░░░░░░░░░░░░░
 #
-#█▓▒░ display name in toilet font
-echo
-echo mbilker | toilet -f 3d | lolcat
+if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
+  #█▓▒░ display name in toilet font
+  echo
+  echo mbilker | toilet -f 3d | lolcat
 
-#█▓▒░ display random fortune
-fortune | cowsay -f small | lolcat
+  #█▓▒░ display random fortune
+  fortune | cowsay -f small | lolcat
+fi
