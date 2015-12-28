@@ -15,9 +15,8 @@
 # ░░░░░░░░░░
 #
 #█▓▒░ aliases
-alias ll="ls -lahF --color=auto"
-alias ls="ls --color=auto"
-alias lsl="ls -lhF --color=auto"
+#alias ll="ls -lahF --color=auto"
+#alias lsl="ls -lhF --color=auto"
 alias "cd.."="cd ../"
 alias up="cd ../"
 alias rmrf="rm -rf"
