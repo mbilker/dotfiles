@@ -16,7 +16,7 @@
 # ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 # ░░░░░░░░░░░░░░░░░░
 #
-if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
+if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ] && [ "$USER" != "root" ]; then
   #█▓▒░ display name in toilet font
   echo
   echo mbilker | toilet -f 3d | lolcat
