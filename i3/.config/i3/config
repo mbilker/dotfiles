@@ -27,7 +27,7 @@ bindsym control+Shift+4 exec "sleep 0.2; scrot -q 100 -s '/home/mbilker/Pictures
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn Terminus-9" --term=/usr/bin/termite --usage-log=/home/mbilker/.local/share/j4-dmenu-desktop.log
 
-bindsym Pause exec xset dpms force standby
+bindsym Pause exec "sleep 0.5; xset dpms force standby"
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
