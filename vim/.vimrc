@@ -142,6 +142,8 @@ if 1 " boolean for plugin loading
   call vundle#end()
   filetype plugin indent on
 
+  au BufRead,BufNewFile *.es6 set filetype=javascript
+
   " syntatic http://git.io/syntastic.vim
   " linters: (from aur) nodejs-jshint, nodejs-jsonlint, csslint, checkbashisms
   let g:syntastic_always_populate_loc_list = 1
