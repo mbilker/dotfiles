@@ -15,7 +15,7 @@
 # ░░░░░░░░░░
 #
 #█▓▒░ tty colors
-if [ "$TERM" = "linux" ]
+if [ "$TERM" = "not-linux" ]
 then
     echo -en "\e]P0222222" #black
     echo -en "\e]P8111111" #darkgrey
