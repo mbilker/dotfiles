@@ -1,4 +1,5 @@
 icons/
+mpd/.mpd/database
 mpd/.mpd/log
 mpd/.mpd/pid
 mpd/.mpd/state
