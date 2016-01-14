@@ -17,6 +17,7 @@
 #█▓▒░ aliases
 #alias ll="ls -lahF --color=auto"
 #alias lsl="ls -lhF --color=auto"
+[[ "$(uname -s)" == "Darwin" ]] && alias ls='ls --color=tty'
 alias "cd.."="cd ../"
 alias up="cd ../"
 alias rmrf="rm -rf"

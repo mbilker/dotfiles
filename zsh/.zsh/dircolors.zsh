@@ -17,7 +17,7 @@
 # ░░░░░░░░░░░░░░░░░░
 #
 #█▓▒░ dircolors import
-if [[ "$(uname -s)" == "FreeBSD" ]]; then
+if [[ "$(uname -s)" == "FreeBSD" ]] || [[ "$(uname -s)" == "Darwin" ]]; then
   eval `gdircolors ~/.dircolors`
 else
   eval `dircolors ~/.dircolors`
