@@ -15,7 +15,7 @@
 # ░░░░░░░░░░
 #
 #█▓▒░ source the plugin https://github.com/zsh-users/zsh-syntax-highlighting
-if [[ "$(uname -s)" == "FreeBSD" ]]; then
+if [[ "$(uname -s)" == "FreeBSD" ]] || [[ "$(uname -s)" == "Darwin" ]]; then
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
