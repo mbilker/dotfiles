@@ -24,6 +24,6 @@ if [ -f "/usr/lib/ssh/x11-ssh-askpass" ]; then
 fi
 
 #█▓▒░ funtoo keychain
-if [[ "$EUID" -ne "0" ]]; then
+if [[ "$EUID" -ne "0" ]] && [[ "$(uname -s)" != "Darwin" ]]; then
   eval `keychain --eval ~/.ssh/id_ed25519`
 fi
