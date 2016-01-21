@@ -96,8 +96,11 @@ set shortmess+=I
 
 " syntax highlighting and colors
 syntax on
-colorscheme sourcerer
+colorscheme onedark
 filetype off
+
+let g:onedark_termcolors=16
+let g:onedark_terminal_italics=1
 
 " stop unnecessary rendering
 set lazyredraw
@@ -175,7 +178,7 @@ if 1 " boolean for plugin loading
   let g:mustache_abbreviations = 1
 
   " ag, the silver searcher http://git.io/AEu3dQ + http://git.io/d9N0MA
-  let g:agprg="ag -i --vimgrep"
+  let g:ag_prg="ag -i --vimgrep"
   let g:ag_highlight=1
   " map \ to the ag command for quick searching
   nnoremap \ :Ag<SPACE>
@@ -187,7 +190,6 @@ if 1 " boolean for plugin loading
   " █▓▒░ wizard status line
   set laststatus=2
   let g:lightline = {
-    \ 'colorscheme': 'sourcerer',
     \ 'active': {
     \   'left': [ [ 'filename' ],
     \             [ 'readonly', 'fugitive' ] ],
