@@ -106,10 +106,8 @@ set shortmess+=I
 
 " syntax highlighting and colors
 syntax on
-colorscheme onedark
+set background=dark
 filetype off
-
-let g:onedark_terminal_italics=1
 
 " stop unnecessary rendering
 set lazyredraw
@@ -150,8 +148,13 @@ if 1 " boolean for plugin loading
   Plugin 'tpope/vim-fugitive'
   Plugin 'jelera/vim-javascript-syntax'
   Plugin 'kchmck/vim-coffee-script'
+  Plugin 'chriskempson/base16-vim'
   call vundle#end()
   filetype plugin indent on
+
+  " base16 color theme
+  let base16colorspace = 256  " Access colors present in 256 colorspace
+  colorscheme base16-colors
 
   au BufRead,BufNewFile *.es6 set filetype=javascript
 
