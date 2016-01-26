@@ -79,12 +79,12 @@ email() {
 ccat() {
   for file in "$@"
   do
-    pygmentize -O style=sourcerer -f console256 -g "$file" 
+    pygmentize -O style=base16 -f console256 -g "$file" 
   done
 }
 # colorized less
 cless() {
-  pygmentize -O style=sourcerer -f console256 -g $1 | less -r 
+  pygmentize -O style=base16 -f console256 -g $1 | less -r 
 }
 # read markdown files like manpages
 #md() {
