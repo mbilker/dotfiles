@@ -21,22 +21,19 @@
  fonts          > configs for gohu and other bitmap fonts
  fun            > term color, sys info, and other misc scripts
  git            > global git config and aliases
- herbstluftwm   > herbstluft wm config and greybeard theme
+ i3             > i3 wm config
  irssi          > nixers irc theme
- mc             > midnight commander ui colors
  mpd            > music player daemon setup
  ncmpcpp        > ncurses mpc++ ui/color settings
  pacman         > pacman colors and progress bar animations
  previews       > unixporn screenshots
  pygments       > add syntax highlighting to cat and less commands
  ranger         > file manager with image previews and z3bra theme
- ryu-login      > ryu ansi art for /etc/issue tty login
  ssh            > remote ssh server keep alive
- stalonetray    > stand alone tray for daemons
  sublime        > sublime text 2 with greybeard, monokai, and gohu
+ termite        > base16 terminal colors and terminal settings
  themes         > mod of the cathexis dark theme for gtk/qt/xfce
  tmux           > terminal multiplexer with custom status bar
- urxvt          > sourcerer terminal colors and keyboard settings
  vim            > wizard status bar and sourcerer color scheme
  wallpaper      > the cool desktop background images i use
  zsh            > zshell settings, aliases, and custom prompts
@@ -84,12 +81,6 @@ to install my **i3** config use the command:
 this will symlink files to `~/.config/i3` and various other places.
 
 but you can override the default behavior and symlink files to another location with the `-t` (target) argument flag. 
-
-to install the **ryu-login** you need to execute the command:
-
-`stow -t / ryu-login` 
-
-this will symlink the file to `/etc/issue`.
 
 **note:** stow can only create a symlink if a config file does not already exist. if a default file was created upon program installation you must delete it first before you can install a new one with stow. this does not apply to directories, only files.
 
