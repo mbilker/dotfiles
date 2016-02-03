@@ -94,7 +94,7 @@ bar {
 }
 
 exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
-exec /usr/bin/gnome-keyring-daemon
+exec /usr/bin/systemctl --user start mate-settings-daemon.service
 exec /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
 exec /usr/bin/udiskie
 exec /usr/bin/nm-applet
