@@ -92,8 +92,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-  #status_command i3status
-  status_command py3status -c ~/.i3status.conf
+  status_command i3status
+  #status_command py3status -c ~/.i3status.conf
 }
 
 exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
