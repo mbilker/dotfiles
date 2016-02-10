@@ -27,7 +27,8 @@ mpd_port = "6600"
 #visualizer_output_name = "mpd spectrum"
 
 # █▓▒░ Playlist
-song_columns_list_format = "$L(9)[white]{l} (20)[red]{a} (30)[green]{b}$R(20)[cyan]{t}"
+#song_columns_list_format = "$L(9)[white]{l} (20)[red]{a} (30)[green]{b}$R(20)[cyan]{t}"
+song_columns_list_format = "(8)[white]{l} (28)[cyan]{a} (28)[white]{b} (50)[cyan]{t}"
 now_playing_prefix = "$b"
 #now_playing_suffix = ""
 playlist_display_mode = "classic" (classic/columns)
@@ -36,11 +37,12 @@ centered_cursor = "no"
 #cyclic_scrolling = "yes"
 mouse_list_scroll_whole_page="no"
 #song_list_format = "{$8$9}{[%l] >> }{%t }$R{%a - %b}"
-song_list_format = " $0$8%l$0$8 $8|$5 $7%a$7 $1|$7 $6%t$1 $R $1%b$1"
+#song_list_format = " $0$8%l$0$8 $8|$5 $7%a$7 $8|$7 $6%t$1 $R $1%b$1"
+song_list_format = "{$3[%l]$9 }{$5%a$9 }{$6%t$9 } $R %n {$5%b$9}"
 song_library_format = "{%n > }{%t}|{%f}"
 
 # █▓▒░ Bars
-song_status_format = "{%a - }{%t - }{%b}"
+song_status_format = "{$5%a$9 - }{$6%t$9 - }{$5%b$9}"
 progressbar_look = "▒▓░"
 titles_visibility = "yes"
 header_visibility = "yes"
@@ -53,23 +55,23 @@ browser_display_mode = "classic" (classic/columns)
 #main_window_highlight_color = "magenta"
 colors_enabled = "yes"
 #mouse_support = "no"
-#user_interface = "classic" (classic/columns)
 
 # █▓▒░ Colors
 discard_colors_if_item_is_selected = "yes"
-#header_window_color
-#volume_color
-#state_line_color
-#state_flags_color
+header_window_color = "red"
+volume_color = "yellow"
+state_line_color = "cyan"
+state_flags_color = "green"
 main_window_color = "cyan"
 progressbar_color = "black"
 progressbar_elapsed_color = "yellow"
-statusbar_color = "black"
+statusbar_color = "white"
 active_column_color = "black"
 
 # █▓▒░ Others
 song_window_title_format = "MPD: {%a > }{%t} | {%f}{%b}"
 follow_now_playing_lyrics = "yes"
+user_interface = "classic" (classic/columns)
 
 # █▓▒░ cheat sheet
 # %l - length
