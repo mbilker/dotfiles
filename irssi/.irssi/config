@@ -180,3 +180,16 @@ settings = {
   "irc/dcc" = { dcc_autoget = "yes"; };
 };
 keyboard = ( );
+chatnets = { mbilker = { type = "IRC"; }; };
+servers = (
+  {
+    address = "mbilker.us";
+    chatnet = "mbilker";
+    port = "1235";
+    password = "mbilker/rizon:";
+    use_ssl = "yes";
+    ssl_cert = "~/.irssi/znc.pem";
+    ssl_verify = "yes";
+    autoconnect = "yes";
+  }
+);
