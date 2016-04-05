@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Discord
-Comment=Slack-like text chat with great voice capabilities
-GenericName=Discord
-Exec=/usr/local/share/discord/discord %U
-Type=Application
-StartupNotify=true
-StartupWMClass=Discord
-Categories=GNOME;GTK;Utility;Development;
