@@ -25,3 +25,5 @@
 	prompt = false
 [merge]
 	log = true
+[commit]
+	gpgsign = true
