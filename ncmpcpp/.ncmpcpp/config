@@ -69,7 +69,7 @@ statusbar_color = "white"
 active_column_color = "black"
 
 # █▓▒░ Others
-song_window_title_format = "MPD: {%a > }{%t} | {%f}{%b}"
+song_window_title_format = "MPD: {%a > }{%t} | {%b | }{%f}"
 follow_now_playing_lyrics = "yes"
 user_interface = "classic" (classic/columns)
 
