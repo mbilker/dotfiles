@@ -16,6 +16,9 @@
 # ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 # ░░░░░░░░░░░░░░░░░░░
 #
+
+utf8 = "on";
+
 aliases = {
   ATAG = "WINDOW SERVER";
   B = "BAN";
@@ -168,6 +171,13 @@ aliases = {
   97 = "WINDOW GOTO 97";
   98 = "WINDOW GOTO 98";
   99 = "WINDOW GOTO 99";
+
+  emote = "exec -o emote";
+  ascii = "exec -o toilet -f future --irc";
+  rusto = "exec -o toilet -f rusto --irc";
+  rustofat = "exec -o toilet -f rustofat --irc";
+  gay = "exec -o toilet -f term --gay --irc";
+  toilet = "exec -o toilet";
 };
 settings = {
   core = { 
