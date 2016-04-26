@@ -8,7 +8,7 @@ clickable_url = true
 dynamic_title = true
 scrollback_lines = 10000
 browser = google-chrome-unstable
-font = Terminus 8
+font = Source Code Pro 11
 
 [colors]
 # Base16 Colors
