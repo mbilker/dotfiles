@@ -1,6 +1,6 @@
 set $mod Mod1
 
-font pango:Monospace 11
+font pango:Roboto Mono 11
 
 floating_modifier $mod
 
