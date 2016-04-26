@@ -1,6 +1,6 @@
 set $mod Mod1
 
-font pango:Hack 10
+font pango:Source Code Pro 11
 
 floating_modifier $mod
 
@@ -28,7 +28,7 @@ bindsym control+Shift+5 exec "scrot -q 100 -u '/home/mbilker/Pictures/Screenshot
 
 #bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn Hack-10" --term=/usr/bin/termite --usage-log=/home/mbilker/.local/share/j4-dmenu-desktop.log
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn SourceCodePro-11" --term=/usr/bin/termite --usage-log=/home/mbilker/.local/share/j4-dmenu-desktop.log
 
 bindsym Pause exec "sleep 0.5; xset dpms force standby"
 
