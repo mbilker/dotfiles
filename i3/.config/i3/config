@@ -78,7 +78,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' '/usr/local/bin/i3-gnome-exit'"
 
 mode "resize" {
   bindsym Left resize shrink width 10 px or 10 ppt
@@ -99,7 +99,7 @@ bar {
 
 exec /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
 exec /usr/bin/nm-applet
-exec /usr/bin/blueman-applet
+#exec /usr/bin/blueman-applet
 exec /usr/bin/dropbox
 exec /usr/bin/feh --bg-max --randomize --recursive ~/.wallpaper
 exec /usr/bin/xcalib -d :0 ~/.icc/default.icc

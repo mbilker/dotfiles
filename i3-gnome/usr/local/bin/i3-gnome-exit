@@ -1,0 +1,9 @@
+#!/bin/sh
+
+i3-msg exit
+
+test -n "$DESKTOP_AUTOSTART_ID" && {
+	dbus-send --print-reply --session --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.Logout "uint32:1"
+}
+
+exit 0
