@@ -101,6 +101,6 @@ exec /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --a
 exec /usr/bin/nm-applet
 #exec /usr/bin/blueman-applet
 exec /usr/bin/dropbox
-exec /usr/bin/dunst
+#exec /usr/bin/dunst
 exec /usr/bin/feh --bg-max --randomize --recursive ~/.wallpaper
 exec /usr/bin/xcalib -d :0 ~/.icc/default.icc
