@@ -103,5 +103,5 @@ exec /usr/bin/nm-applet
 #exec /usr/bin/blueman-applet
 exec /usr/bin/dropbox
 #exec /usr/bin/dunst
-exec /usr/bin/feh --bg-max --randomize --recursive ~/.wallpaper
+exec /usr/bin/feh --bg-fill --randomize --recursive ~/.wallpaper
 exec /usr/bin/xcalib -d :0 ~/.icc/default.icc
