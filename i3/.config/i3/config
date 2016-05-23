@@ -21,10 +21,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 7
 bindsym XF86KbdBrightnessUp exec kbdlight up 5
 bindsym XF86KbdBrightnessDown exec kbdlight down 5
 
-bindsym control+Shift+4 exec "sleep 0.2; scrot -q 100 -s '/home/mbilker/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png'"
-bindsym control+Shift+3 exec "scrot -q 100 '/home/mbilker/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png'"
-#bindsym Shift+Print exec "scrot -q 100 -u '/home/mbilker/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png'"
-bindsym control+Shift+5 exec "scrot -q 100 -u '/home/mbilker/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png'"
+bindsym control+Shift+4 exec "sleep 0.2; scrot -q 100 -s '/home/mbilker/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 /home/mbilker/Pictures/Screenshots/$f'"
+bindsym control+Shift+3 exec "scrot -q 100 '/home/mbilker/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 /home/mbilker/Pictures/Screenshots/$f'"
+#bindsym Shift+Print exec "scrot -q 100 -u '/home/mbilker/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 /home/mbilker/Pictures/Screenshots/$f'"
+bindsym control+Shift+5 exec "scrot -q 100 -u '/home/mbilker/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 /home/mbilker/Pictures/Screenshots/$f'"
 
 #bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
