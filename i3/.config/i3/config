@@ -18,8 +18,8 @@ bindsym XF86AudioMute exec pulseaudio-ctl mute
 bindsym XF86MonBrightnessUp exec xbacklight -inc 7
 bindsym XF86MonBrightnessDown exec xbacklight -dec 7
 
-bindsym XF86KbdBrightnessUp exec kbdlight up 5
-bindsym XF86KbdBrightnessDown exec kbdlight down 5
+bindsym XF86KbdBrightnessUp exec kbdlight up 50
+bindsym XF86KbdBrightnessDown exec kbdlight down 50
 
 bindsym control+Shift+4 exec "sleep 0.2; scrot -q 100 -s '/home/mbilker/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 /home/mbilker/Pictures/Screenshots/$f'"
 bindsym control+Shift+3 exec "scrot -q 100 '/home/mbilker/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 /home/mbilker/Pictures/Screenshots/$f'"
