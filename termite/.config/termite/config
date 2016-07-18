@@ -17,7 +17,8 @@ font = Terminus 8
 foreground      = #bbbbbb
 foreground_bold = #bbbbbb
 cursor          = #bbbbbb
-background      = #111111
+#background      = #111111
+background      = rgba(17, 17, 17, 0.8)
 
 # 16 color space
 color0  = #111111
