@@ -14,6 +14,7 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
 bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
 bindsym XF86AudioMute exec pulseaudio-ctl mute
+bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 7
 bindsym XF86MonBrightnessDown exec xbacklight -dec 7
