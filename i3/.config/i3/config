@@ -11,6 +11,11 @@ bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPlay exec mpc toggle
 
+# For ThinkPad
+bindsym XF86Tools exec mpc prev
+bindsym XF86Search exec mpc next
+bindsym XF86LaunchA exec mpc toggle
+
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
 bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
 bindsym XF86AudioMute exec pulseaudio-ctl mute
@@ -103,6 +108,6 @@ exec /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --a
 exec /usr/bin/nm-applet
 #exec /usr/bin/blueman-applet
 exec /usr/bin/dropbox
-exec /usr/bin/compton
+#exec /usr/bin/compton
 exec /usr/bin/feh --bg-fill --randomize --recursive ~/.wallpaper
 exec /usr/bin/xcalib -d :0 ~/.icc/default.icc
