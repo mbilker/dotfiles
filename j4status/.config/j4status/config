@@ -1,0 +1,64 @@
+[Plugins]
+Output=i3bar
+Input=cpu;fsinfo;mpd;nm;upower;pulseaudio;sensors;time;
+Order=fsinfo;mpd;nm-wifi;nm-ethernet;upower-battery;pulseaudio;cpu;sensors;time;
+
+[Time]
+Zones=America/New_York;
+
+[Filesystem]
+Names=root;
+
+[Filesystem root]
+Mountpoint=/
+
+[NetworkManager]
+Interfaces=enp0s31f6;wlp4s0;
+
+[NetworkManager Formats]
+Addresses=IPv4
+
+[Sensors]
+Sensors=coretemp-isa-0000;
+
+[MPD]
+Host=127.0.0.1
+Port=6600
+
+[MPD 127.0.0.1]
+Format=${[<state>] }${song}
+
+[CPULoad]
+Frequency=3
+
+[i3bar]
+GoodColour=#1AFF00
+
+[Override sensors:coretemp-isa-0000/temp1]
+Label=🌡
+
+[Override sensors:coretemp-isa-0000/temp2]
+Disable=true
+[Override sensors:coretemp-isa-0000/temp3]
+Disable=true
+[Override sensors:coretemp-isa-0000/temp4]
+Disable=true
+[Override sensors:coretemp-isa-0000/temp5]
+Disable=true
+
+[Override nm-wifi:wlp4s0]
+Label=📶
+
+[Override time:local]
+Label=🕗
+
+[Override upower-battery:BAT0]
+Label=🔋
+
+[Override pulseaudio:alsa_output.usb-Logitech_Logitech_USB_Headset-00.analog-stereo]
+Label=♪
+[Override pulseaudio:alsa_output.pci-0000_00_1f.3.analog-stereo]
+Label=♪
+
+[Override cpu]
+Label=CPU
