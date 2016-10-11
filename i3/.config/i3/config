@@ -4,6 +4,8 @@ font pango:Terminus 9
 
 floating_modifier $mod
 
+hide_edge_borders both
+
 bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
@@ -100,14 +102,15 @@ bindsym $mod+r mode "resize"
 
 bar {
   status_command i3status
+  #status_command j4status
   tray_output primary
 }
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
+exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
 exec /usr/bin/nm-applet
 #exec /usr/bin/blueman-applet
 exec /usr/bin/dropbox
+exec --no-startup-id /usr/bin/feh --bg-fill --randomize --recursive ~/.wallpaper
+exec --no-startup-id /usr/bin/xcalib -d :0 ~/.icc/default.icc
 #exec /usr/bin/compton
-exec /usr/bin/feh --bg-fill --randomize --recursive ~/.wallpaper
-exec /usr/bin/xcalib -d :0 ~/.icc/default.icc
