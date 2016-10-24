@@ -13,7 +13,7 @@ INPUT="alsa_input.usb-Logitech_Logitech_USB_Headset-00.analog-mono"
 if [ "$1" == "--fork" ]; then
     # When run from udev, we fork to give pulseaudio a chance to
     # detect the new device
-    bash $0 &
+    bash $0 #&
 elif [ "$UID" == "0" ]; then
     # If we're running as root, we just forked from udev. Now sleep so
     # pulseaudio can run.
@@ -27,6 +27,8 @@ elif [ "$UID" == "0" ]; then
 	su $user -c "bash $0"
     done
 else
+    export PULSE_RUNTIME_PATH="/run/user/${UID}/pulse"
+
     # Running as non-root, so adjust our PulseAudio directly.
     pacmd set-default-sink $OUTPUT >/dev/null 2>&1
     pacmd set-default-source $INPUT >/dev/null 2>&1

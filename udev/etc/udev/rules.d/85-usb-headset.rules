@@ -1,1 +1,1 @@
-KERNEL=="card?", SUBSYSTEM=="sound", ATTR{id}=="Headset", ACTION=="add", RUN+="/opt/scripts/usb-headset --fork"
+KERNEL=="card?", SUBSYSTEM=="sound", ATTR{id}=="Headset", ACTION=="add", RUN+="/usr/bin/systemctl start usb_headset_toggle.service"

@@ -1,0 +1,11 @@
+[Unit]
+Description=Set the default PulseAudio sound output and sound input to newly connected USB headset
+
+[Service]
+Type=simple
+RemainAfterExit=no
+ExecStart=/opt/scripts/usb-headset.sh
+
+[Install]
+WantedBy=multi-user.target
+
