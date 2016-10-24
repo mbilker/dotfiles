@@ -228,9 +228,6 @@ let g:ag_highlight=1
 " map \ to the ag command for quick searching
 nnoremap \ :Ag<SPACE>
 
-" wizard colors http://git.io/vim.sourcerer
-colorscheme blaquemagick
-
 " ┏━┓╺┳╸┏━┓╺┳╸╻ ╻┏━┓╻  ╻┏┓╻┏━╸
 " ┗━┓ ┃ ┣━┫ ┃ ┃ ┃┗━┓┃  ┃┃┗┫┣╸ 
 " ┗━┛ ╹ ╹ ╹ ╹ ┗━┛┗━┛┗━╸╹╹ ╹┗━╸
@@ -238,7 +235,6 @@ colorscheme blaquemagick
 " █▓▒░ wizard status line
 set laststatus=2
 let g:lightline = {
-  \ 'colorscheme': 'sourcerer',
   \ 'active': {
   \   'left': [ [ 'filename' ],
   \             [ 'readonly', 'fugitive' ] ],
