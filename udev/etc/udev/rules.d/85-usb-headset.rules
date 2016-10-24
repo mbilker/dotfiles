@@ -1,0 +1,1 @@
+KERNEL=="card?", SUBSYSTEM=="sound", ATTR{id}=="Headset", ACTION=="add", RUN+="/opt/scripts/usb-headset --fork"
