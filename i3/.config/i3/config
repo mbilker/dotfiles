@@ -113,4 +113,4 @@ exec /usr/bin/nm-applet
 exec /usr/bin/dropbox
 exec --no-startup-id /usr/bin/feh --bg-fill --randomize --recursive ~/.wallpaper
 exec --no-startup-id /usr/bin/xcalib -d :0 ~/.icc/default.icc
-#exec /usr/bin/compton
+exec /usr/bin/compton
