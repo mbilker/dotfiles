@@ -108,7 +108,7 @@ bar {
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
-exec /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/nm-applet
 #exec /usr/bin/blueman-applet
 exec /usr/bin/dropbox
 exec --no-startup-id /usr/bin/feh --bg-fill --randomize --recursive ~/.wallpaper
