@@ -14,3 +14,4 @@ not-used/ranger/.config/ranger/tagged
 ssh/.ssh/id_*
 ssh/.ssh/known_hosts
 vim/.vim/bundle/
+mpv/.config/mpv/watch_later/
