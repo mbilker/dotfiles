@@ -106,11 +106,12 @@ bar {
   tray_output primary
 }
 
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startuo-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
 exec --no-startup-id /usr/bin/nm-applet
-#exec /usr/bin/blueman-applet
-exec /usr/bin/dropbox
+exec --no-startup-id /usr/bin/blueman-applet
+exec --no-startup-id /usr/bin/ibus-daemon --xim -d
+exec --no-startup-id /usr/bin/dropbox
 exec --no-startup-id /usr/bin/feh --bg-fill --randomize --recursive ~/.wallpaper
 exec --no-startup-id /usr/bin/xcalib -d :0 ~/.icc/default.icc
-exec /usr/bin/compton
+exec --no-startup-id /usr/bin/compton
