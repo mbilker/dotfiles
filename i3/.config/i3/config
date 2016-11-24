@@ -106,7 +106,7 @@ bar {
   tray_output primary
 }
 
-exec --no-startuo-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/blueman-applet
