@@ -1,0 +1,11 @@
+if test $# -lt 1 ; then
+  echo "Usage: $(basename "$0") FILE [FILE...]"
+else
+  set=
+  for f ; do
+    test "$set" || set -- ; set=1
+    set -- "$@" -F "files[]=@$f"
+  done
+
+  curl -fsSL "$@" "https://a.mbilker.us/upload.php" | jq -c -r ".files[].url"
+fi
