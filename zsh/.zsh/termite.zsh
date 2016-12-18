@@ -15,7 +15,7 @@
 # ░▓▓▓▓▓▓▓▓▓▓
 # ░░░░░░░░░░
 #
-#█▓▒░ import vte profile file for termite
-if [[ "$OSTYPE" = "linux"* ]]; then
+#█▓▒░ import vte profile file for termite, but not under gentoo
+if [[ "$OSTYPE" = "linux"* ]] && [ ! -f /etc/gentoo-release ]; then
   source /etc/profile.d/vte.sh
 fi
