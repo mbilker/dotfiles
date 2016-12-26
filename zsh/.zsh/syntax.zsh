@@ -17,6 +17,8 @@
 #█▓▒░ source the plugin https://github.com/zsh-users/zsh-syntax-highlighting
 if [[ "$(uname -s)" == "FreeBSD" ]] || [[ "$(uname -s)" == "Darwin" ]]; then
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -f /etc/gentoo-release ]; then
+  source /usr/share/zsh/site-contrib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
