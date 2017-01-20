@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set -x
+
+xset m 0 0
+
+TOUCHSCREEN="Wacom Co.,Ltd. Pen and multitouch sensor Finger touch"
+EXTERNAL="Wacom Bamboo One S Pen stylus"
+
+xsetwacom set "$TOUCHSCREEN" MapToOutput HEAD-0
+
+if [[ "x$1" == "xosu" ]]; then
+  xsetwacom set "$TOUCHSCREEN" Gesture on
+
+  xsetwacom set "$TOUCHSCREEN" Suppress 1
+  xsetwacom set "$TOUCHSCREEN" RawSample 2
+
+  xsetwacom set "$EXTERNAL" Suppress 1
+  xsetwacom set "$EXTERNAL" RawSample 1
+
+  #xsetwacom set "$EXTERNAL" Rotate half
+else
+  xsetwacom set "$TOUCHSCREEN" Gesture off
+
+  xsetwacom set "$TOUCHSCREEN" Suppress 2
+  xsetwacom set "$TOUCHSCREEN" RawSample 4
+fi
+
+xsetwacom set "$EXTERNAL" MapToOutput HEAD-0

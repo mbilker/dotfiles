@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -x
+
+TOUCHSCREEN="Wacom Co.,Ltd. Pen and multitouch sensor Finger touch"
+EXTERNAL="Wacom Bamboo One S Pen stylus"
+
+xsetwacom set "$EXTERNAL" Rotate half
