@@ -8,7 +8,8 @@ clickable_url = true
 dynamic_title = true
 scrollback_lines = 10000
 browser = google-chrome-unstable
-font = xos4 Terminus 8
+#font = xos4 Terminus 8
+font = Hack 9
 
 [colors]
 # Base16 Colors
