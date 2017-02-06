@@ -1,6 +1,7 @@
 set $mod Mod1
 
-font pango:xos4 Terminus 9
+#font pango:xos4 Terminus 9
+font pango:Terminus 9
 
 floating_modifier $mod
 
@@ -36,7 +37,8 @@ bindsym control+Shift+5 exec "scrot -q 100 -u $HOME'/Pictures/Screenshots/%Y-%m-
 
 #bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'xos4 Terminus-8'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'xos4 Terminus-8'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'Terminus-8'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
 
 bindsym Pause exec "sleep 0.5; xset dpms force standby"
 
@@ -86,7 +88,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' '/usr/local/bin/i3-gnome-exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' '/usr/local/bin/i3-gnome-exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
   bindsym Left resize shrink width 10 px or 10 ppt
