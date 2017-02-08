@@ -1,0 +1,8 @@
+# Taken from https://github.com/terlar/dotfiles/blob/master/systemd/.config/systemd/user/graphical.target
+
+[Unit]
+Description=Graphical Interface
+Conflicts=console.target
+Wants=input-method.service
+After=input-method.service
+AllowIsolate=yes
