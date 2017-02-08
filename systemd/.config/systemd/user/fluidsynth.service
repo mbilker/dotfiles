@@ -1,0 +1,10 @@
+[Unit]
+Description=FluidSynth Daemon
+After=pulseaudio.service
+
+[Service]
+ExecStart=/usr/bin/fluidsynth -is -a $AUDIO_DRIVER $OTHER_OPTS $SOUND_FONT
+EnvironmentFile=/etc/conf.d/fluidsynth
+
+[Install]
+WantedBy=default.target
