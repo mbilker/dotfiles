@@ -5,4 +5,11 @@ set -x
 TOUCHSCREEN="Wacom Co.,Ltd. Pen and multitouch sensor Finger touch"
 EXTERNAL="Wacom Bamboo One S Pen stylus"
 
-xsetwacom set "$EXTERNAL" Rotate half
+if [[ "x$1" == "xreset" ]]; then
+  xsetwacom set "$TOUCHSCREEN" Rotate none
+  xsetwacom set "$EXTERNAL" Rotate none
+elif [[ "x$1" == "xscreen" ]]; then
+  xsetwacom set "$TOUCHSCREEN" Rotate half
+else
+  xsetwacom set "$EXTERNAL" Rotate half
+fi
