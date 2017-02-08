@@ -1,0 +1,8 @@
+[Unit]
+Description=Dropbox
+
+[Service]
+ExecStart=/opt/bin/dropbox
+
+[Install]
+WantedBy=graphical.target
