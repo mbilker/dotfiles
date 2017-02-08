@@ -1,0 +1,9 @@
+[Unit]
+Description=Compton compositor for X11
+Documentation=man:compton(1)
+
+[Service]
+ExecStart=/usr/bin/compton
+
+[Install]
+WantedBy=graphical.target

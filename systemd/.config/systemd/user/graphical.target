@@ -3,6 +3,4 @@
 [Unit]
 Description=Graphical Interface
 Conflicts=console.target
-Wants=input-method.service
-After=input-method.service
 AllowIsolate=yes

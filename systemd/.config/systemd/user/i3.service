@@ -1,0 +1,11 @@
+[Unit]
+Description=i3 Window Manager
+Documentation=man:i391)
+
+[Service]
+ExecStart=/usr/bin/i3
+Restart=always
+RestartSec=1
+
+[Install]
+Alias=window-manager.service
