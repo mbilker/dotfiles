@@ -6,6 +6,12 @@ for unit in $(systemctl --user --no-legend --state=failed list-units | cut -f1 -
   fi
 done
 
+for env in $(env); do
+  if [[ "$env" = "XDG"* ]]; then
+    systemctl --user set-environment $env
+  fi
+done
+
 # --wait support added in systemd 232
 systemctl --user start --wait window-manager.service 2>&1 >> "$LOG"
 
