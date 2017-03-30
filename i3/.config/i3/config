@@ -19,9 +19,12 @@ bindsym XF86Tools exec mpc prev
 bindsym XF86Search exec mpc next
 bindsym XF86LaunchA exec mpc toggle
 
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
-bindsym XF86AudioMute exec pulseaudio-ctl mute
+#bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
+#bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
+#bindsym XF86AudioMute exec pulseaudio-ctl mute
+bindsym XF86AudioRaiseVolume exec amixer set Master 2%+
+bindsym XF86AudioLowerVolume exec amixer set Master 2%-
+bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 7

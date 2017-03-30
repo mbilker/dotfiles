@@ -102,6 +102,15 @@ command Spell :setlocal spell! spell?
 " make current buffer executable
 command Chmodx :!chmod a+x %
 
+" let's make some textmode art!
+function! AsciiMode()
+  "e ++enc=cp850
+  set nu!
+  set virtualedit=all
+  set colorcolumn=80
+endfunction
+command Ascii :call AsciiMode()
+
 " ╻┏┓╻╺┳╸┏━╸┏━┓┏━╸┏━┓┏━╸┏━╸
 " ┃┃┗┫ ┃ ┣╸ ┣┳┛┣╸ ┣━┫┃  ┣╸ 
 " ╹╹ ╹ ╹ ┗━╸╹┗╸╹  ╹ ╹┗━╸┗━╸
@@ -150,7 +159,7 @@ set listchars+=nbsp:⣿
 " ╹  ┗━╸┗━┛┗━┛╹╹ ╹   ┗━┛ ╹ ┗━┛╹  ╹  
 " i struggle with the decision to use plugins or a more vanilla vim, don't judge me.
 " to install from the shell run:
-" git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vim/.vim/bundle/Vundle.vim && vim +BundleInstall +qall && pacman -S the_silver_searcher
+" git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vim/.vim/bundle/Vundle.vim vim +BundleInstall +qall && pacman -S the_silver_searcher
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -166,10 +175,12 @@ Plugin 'mbbill/undotree'
 Plugin 'isa/vim-matchit'
 Plugin 'chrisbra/unicode.vim'
 Plugin 'lilydjwg/colorizer'
+Plugin 'othree/html5.vim'
 Plugin 'itchyny/lightline.vim'
 " Plugin 'jelera/vim-javascript-syntax'
 " Plugin 'kchmck/vim-coffee-script'
 Plugin 'chriskempson/base16-vim'
+Plugin 'gabrielelana/vim-markdown'
 call vundle#end()
 filetype plugin indent on
 

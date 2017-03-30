@@ -44,6 +44,7 @@ alias gp="git push"
 alias gu="git unstage"
 alias gg="git graph"
 alias gco="git checkout"
+alias gcs="git commit -S -m"
 alias gpr="hub pull-request"
 alias ag="ag --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias tree='tree -CAFa -I "CVS|*.*.package|.svn|.git|.hg|node_modules|bower_components" --dirsfirst'
@@ -66,31 +67,47 @@ alias lol="base64 </dev/urandom | lolcat"
 alias ZZ="quit"
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 alias todo="bash ~/code/sys/todo"
-#alias record="ffmpeg -f x11grab -s 1366x768 -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y" #pass a filename
-#alias nexus="jmtpfs ~/nexus"
 alias open="gvfs-open"
-tmx() {
-  [[ $# -eq 0 ]] && bash ~/bin/tmx 0 || bash ~/bin/tmx $#
+
+#█▓▒░ dumb tmux trix
+alias tsad="printf '\033k┐(T_T)┌\033\\'"
+alias tshrug="printf '\033k┐(\`-\`)┌\033\\'"
+alias tlol="printf '\033k┐(^0^)┌\033\\'"
+
+#█▓▒░ update mpd database
+function genplaylist() {
+  cd ~/music
+  find . -name '*.mp3' -o -name '*.flac'|sed -e 's%^./%%g' > ~/.config/mpd/playlists/all.m3u
+  mpc clear
+  mpc load all.m3u
+  mpc update
 }
-email() {
+
+function t() {
+  X=$#
+  [[ $X -eq 0 ]] || X=X
+  tmux new-session -A -s $X
+}
+
+function email() {
 	echo $3 | mutt -s $2 $1
 }
 # colorized cat
-ccat() {
+function c() {
   for file in "$@"
   do
     pygmentize -O style=base16 -f console256 -g "$file" 
   done
 }
 # colorized less
-cless() {
+function l() {
   pygmentize -O style=base16 -f console256 -g $1 | less -r 
 }
 # read markdown files like manpages
-#md() {
+#function md() {
 #  pandoc -s -f markdown -t man "$*" | man -l -
 #}
 # nullpointer url shortener
-short() {
+function short() {
   curl -F"shorten=$*" https://0x0.st
 }
