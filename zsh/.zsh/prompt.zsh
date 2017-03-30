@@ -95,13 +95,11 @@ GIT_PROMPT() {
 case "$PROMPT_STYLE" in
 #█▓▒░ ascii
 ascii)
-PROMPT='%{$bg[cyan]%} %F{black}%~ $(GIT_PROMPT)$reset_color 
-%f'
+PROMPT='%{$bg[cyan]%} %F{black}%~ $(GIT_PROMPT)$reset_color %f'
 ;;
 #█▓▒░ arrows
 arrows)
-PROMPT='%{$bg[cyan]%}%F{black} %~ $(GIT_PROMPT)$reset_color 
-%f'
+PROMPT='%{$bg[cyan]%}%F{black} %~ $(GIT_PROMPT)$reset_color %f'
 ;;
 #█▓▒░ ninja
 ninja)
