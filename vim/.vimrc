@@ -159,7 +159,7 @@ set listchars+=nbsp:⣿
 " ╹  ┗━╸┗━┛┗━┛╹╹ ╹   ┗━┛ ╹ ┗━┛╹  ╹  
 " i struggle with the decision to use plugins or a more vanilla vim, don't judge me.
 " to install from the shell run:
-" git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vim/.vim/bundle/Vundle.vim vim +BundleInstall +qall && pacman -S the_silver_searcher
+" git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/vim/.vim/bundle/Vundle.vim vim +BundleInstall +qall
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -179,6 +179,7 @@ Plugin 'othree/html5.vim'
 Plugin 'itchyny/lightline.vim'
 " Plugin 'jelera/vim-javascript-syntax'
 " Plugin 'kchmck/vim-coffee-script'
+Plugin 'rust-lang/rust.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'gabrielelana/vim-markdown'
 call vundle#end()
@@ -205,6 +206,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_rust_checkers = ['cargo']
 " color overrides
 highlight SyntasticErrorSign ctermfg=red ctermbg=237
 highlight SyntasticWarningSign ctermfg=yellow ctermbg=237
