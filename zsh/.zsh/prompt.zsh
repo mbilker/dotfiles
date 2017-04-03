@@ -42,6 +42,14 @@ else # root!
 	USER_LEVEL="${COLOR_ROOT}"
 fi
 
+#█▓▒░ ssh host info
+USER_HOST_INFO() {
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ "$USER" = "root" ]; then
+    echo -n "${USER_LEVEL}[%F{yellow}${HOST}${USER_LEVEL}]"
+  fi
+}
+
+
 #█▓▒░ git prompt
 setopt promptsubst
 autoload -Uz vcs_info
@@ -117,6 +125,6 @@ ${USER_LEVEL}└─ - %f'
 ;;
 #█▓▒░ classic
 *)
-PROMPT='${USER_LEVEL}[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)── - %f'
+PROMPT='${USER_LEVEL}$(USER_HOST_INFO)[${COLOR_NORMAL}%~${USER_LEVEL}]$(GIT_PROMPT)── - %f'
 ;;
 esac

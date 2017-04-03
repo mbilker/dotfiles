@@ -1,3 +1,0 @@
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ "$USER" = "root" ]; then
-  echo -n "${USER_LEVEL}[%F{yellow}${HOST}${USER_LEVEL}]"
-fi
