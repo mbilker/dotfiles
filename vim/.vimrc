@@ -235,12 +235,6 @@ highlight GitGutterChange ctermfg=yellow ctermbg=237
 highlight GitGutterDelete ctermfg=red ctermbg=237
 highlight GitGutterChangeDelete ctermfg=red ctermbg=237
 
-" ag, the silver searcher http://git.io/AEu3dQ + http://git.io/d9N0MA
-let g:agprg="ag -i --vimgrep"
-let g:ag_highlight=1
-" map \ to the ag command for quick searching
-nnoremap \ :Ag<SPACE>
-
 " ┏━┓╺┳╸┏━┓╺┳╸╻ ╻┏━┓╻  ╻┏┓╻┏━╸
 " ┗━┓ ┃ ┣━┫ ┃ ┃ ┃┗━┓┃  ┃┃┗┫┣╸ 
 " ┗━┛ ╹ ╹ ╹ ╹ ┗━┛┗━┛┗━╸╹╹ ╹┗━╸
