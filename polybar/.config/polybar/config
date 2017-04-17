@@ -14,6 +14,11 @@ compositing-overline = over
 compositing-underline = over
 compositing-border = over
 
+screenchange-reload = true
+
+throttle-output = 5
+throttle-output-for = 10
+
 [colors]
 transparent    = #00000000
 background     = #222
@@ -92,9 +97,6 @@ width = 100%
 height = 20
 ;offset-x = 0
 ;offset-y = 0
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -307,6 +309,9 @@ format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
+
+label-charging = %percentage%% (%consumption%)
+label-discharging = %percentage%% (%consumption%)
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
