@@ -13,7 +13,10 @@ EXTERNAL="Wacom Bamboo One S Pen stylus"
 AREAX=14720
 AREAY=9225
 
-PERCENTAGE=0.05
+PERCENTAGE=0.07
+
+xsetwacom --set "$TOUCHSCREEN" MapToOutput HEAD-0
+xsetwacom --set "$EXTERNAL" MapToOutput HEAD-0
 
 if [[ "x$1" == "xosu" ]]; then
   xsetwacom --set "$TOUCHSCREEN" Gesture on
@@ -38,6 +41,3 @@ else
   xsetwacom --set "$TOUCHSCREEN" Suppress 2
   xsetwacom --set "$TOUCHSCREEN" RawSample 4
 fi
-
-xsetwacom --set "$TOUCHSCREEN" MapToOutput HEAD-0
-xsetwacom --set "$EXTERNAL" MapToOutput HEAD-0
