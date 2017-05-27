@@ -7,23 +7,37 @@ xset m 0 0
 TOUCHSCREEN="Wacom Co.,Ltd. Pen and multitouch sensor Finger touch"
 EXTERNAL="Wacom Bamboo One S Pen stylus"
 
-xsetwacom set "$TOUCHSCREEN" MapToOutput HEAD-0
+# These numbers are specific for each device. Get them by running:
+# xsetwacom --set "Your device name here" ResetArea
+# xsetwacom --get "Your device name here" Area
+AREAX=14720
+AREAY=9225
+
+PERCENTAGE=0.05
 
 if [[ "x$1" == "xosu" ]]; then
-  xsetwacom set "$TOUCHSCREEN" Gesture on
+  xsetwacom --set "$TOUCHSCREEN" Gesture on
 
-  xsetwacom set "$TOUCHSCREEN" Suppress 1
-  xsetwacom set "$TOUCHSCREEN" RawSample 2
+  #xsetwacom --set "$TOUCHSCREEN" Suppress 1
+  #xsetwacom --set "$TOUCHSCREEN" RawSample 2
 
-  xsetwacom set "$EXTERNAL" Suppress 1
-  xsetwacom set "$EXTERNAL" RawSample 1
+  #xsetwacom --set "$EXTERNAL" Suppress 1
+  #xsetwacom --set "$EXTERNAL" RawSample 1
 
-  #xsetwacom set "$EXTERNAL" Rotate half
+  #xsetwacom --set "$EXTERNAL" Rotate half
+
+  NEWBASEX=$(echo "scale=0; $AREAX * $PERCENTAGE / 1" | bc)
+  NEWBASEY=$(echo "scale=0; $AREAY * $PERCENTAGE / 1" | bc)
+  NEWAREAX=$(echo "$AREAX - $NEWBASEX" | bc)
+  NEWAREAY=$(echo "$AREAY - $NEWBASEY" | bc)
+
+  xsetwacom --set "$EXTERNAL" Area "$NEWBASEX" "$NEWBASEY" "$NEWAREAX" "$NEWAREAY"
 else
-  xsetwacom set "$TOUCHSCREEN" Gesture off
+  xsetwacom --set "$TOUCHSCREEN" Gesture off
 
-  xsetwacom set "$TOUCHSCREEN" Suppress 2
-  xsetwacom set "$TOUCHSCREEN" RawSample 4
+  xsetwacom --set "$TOUCHSCREEN" Suppress 2
+  xsetwacom --set "$TOUCHSCREEN" RawSample 4
 fi
 
-xsetwacom set "$EXTERNAL" MapToOutput HEAD-0
+xsetwacom --set "$TOUCHSCREEN" MapToOutput HEAD-0
+xsetwacom --set "$EXTERNAL" MapToOutput HEAD-0
