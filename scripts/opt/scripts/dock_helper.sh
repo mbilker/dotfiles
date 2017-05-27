@@ -1,10 +1,15 @@
 #!/bin/bash
 
-FIRST_EXTERNAL="DP-3.2"
-FIRST_EXTERNAL_SETTING="nvidia-auto-select +0+0"
-FIRST_EXTERNAL_HORIZONTAL_SIZE="1920"
+FIRST_EXTERNAL="DP-3.3"
+#FIRST_EXTERNAL="DP-3.1"
+FIRST_EXTERNAL_SETTING="1280x1024 +0+0"
+FIRST_EXTERNAL_HORIZONTAL_SIZE="1280"
 SECOND_EXTERNAL="DP-3.1"
+#SECOND_EXTERNAL="DP-3.2"
 SECOND_EXTERNAL_SETTING="nvidia-auto-select +${FIRST_EXTERNAL_HORIZONTAL_SIZE}+0"
+PRIMARY_EXTERNAL="${SECOND_EXTERNAL}"
+EXTERNAL_METAMODE="${FIRST_EXTERNAL}: ${FIRST_EXTERNAL_SETTING} { ForceFullCompositionPipeline = On }, ${SECOND_EXTERNAL}: ${SECOND_EXTERNAL_SETTING} { ForceFullCompositionPipeline = On }"
+#EXTERNAL_METAMODE="${FIRST_EXTERNAL}: ${FIRST_EXTERNAL_SETTING} { ForceFullCompositionPipeline = On }"
 #LCD_SCREEN="DP-4"
 LCD_SCREEN="eDP-1-1"
 
@@ -35,8 +40,8 @@ case "$1" in
   "1")
     # docked
     /usr/bin/xrandr --output "${LCD_SCREEN}" --off
-    /usr/bin/nvidia-settings -a CurrentMetaMode="${FIRST_EXTERNAL}: ${FIRST_EXTERNAL_SETTING} { ForceFullCompositionPipeline = On }, ${SECOND_EXTERNAL}: ${SECOND_EXTERNAL_SETTING} { ForceFullCompositionPipeline = On }"
-    /usr/bin/xrandr --output "${FIRST_EXTERNAL}" --primary
+    /usr/bin/nvidia-settings -a CurrentMetaMode="${EXTERNAL_METAMODE}"
+    /usr/bin/xrandr --output "${PRIMARY_EXTERNAL}" --primary
     for id in $TRACKPOINT_IDS; do
       /usr/bin/xinput set-int-prop "${id}" "Device Enabled" 8 0
     done
