@@ -22,13 +22,16 @@ bindsym XF86LaunchA exec mpc toggle
 #bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 2
 #bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 2
 #bindsym XF86AudioMute exec pulseaudio-ctl mute
+#bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 bindsym XF86AudioRaiseVolume exec amixer set Master 2%+
 bindsym XF86AudioLowerVolume exec amixer set Master 2%-
 bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
+bindsym XF86AudioMicMute exec amixer set Capture toggle
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 7
-bindsym XF86MonBrightnessDown exec xbacklight -dec 7
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 7
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 7
+bindsym XF86MonBrightnessUp exec /opt/scripts/intel_backlight.sh up
+bindsym XF86MonBrightnessDown exec /opt/scripts/intel_backlight.sh down
 
 bindsym XF86KbdBrightnessUp exec kbdlight up 50
 bindsym XF86KbdBrightnessDown exec kbdlight down 50
@@ -119,6 +122,7 @@ exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/
 exec --no-startup-id /usr/bin/ibus-daemon --xim -d
 exec --no-startup-id /usr/bin/feh --bg-fill --randomize --recursive ~/.wallpaper
 exec --no-startup-id /usr/bin/xcalib -d :0 ~/.icc/default.icc
+exec --no-startup-id /usr/bin/xrdb -merge ~/.Xresources
 exec --no-startup-id /usr/bin/systemctl --user restart graphical.target
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
