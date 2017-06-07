@@ -77,9 +77,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Terminus:pixelsize=10;1
+font-0 = xos4 Terminus:pixelsize=10;1
 font-1 = FontAwesome:pixelsize=10;1
-font-2 = siji:pixelsize=10;1
+font-2 = Wuncon Siji:pixelsize=10;1
 font-3 = Noto Sans CJK JP:size=10;2
 font-4 = Noto Sans CJK TC:size=10;2
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
