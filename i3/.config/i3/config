@@ -117,6 +117,17 @@ bindsym $mod+r mode "resize"
 #  tray_output none
 #}
 
+# Floating enabled for...
+for_window [title=Qsynth] floating enable
+for_window [class="milkytracker"] floating enable
+for_window [class="Qjackctl"] floating enable
+
+for_window [title="Preferences$"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="About"] floating enable
+for_window [class="Gtkdialog" instance="gtkdialog"] floating enable
+
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
 exec --no-startup-id /usr/bin/ibus-daemon --xim -d
