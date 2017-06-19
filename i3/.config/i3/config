@@ -43,7 +43,7 @@ bindsym control+Shift+5 exec "scrot -q 100 -u $HOME'/Pictures/Screenshots/%Y-%m-
 
 #bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'xos4 Terminus-9'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'xos4 Terminus-8'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'Terminus-9'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
 
 bindsym Pause exec "sleep 0.5; xset dpms force standby"
