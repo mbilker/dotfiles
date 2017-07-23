@@ -19,10 +19,15 @@
 #HIST_STAMPS=mm/dd/yyyy
 
 #█▓▒░ paths
-export PATH="$HOME/bin:$HOME/.gopath/bin:`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$HOME/.cargo/bin:$PATH"
+export PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.gopath/bin:$PATH"
 #export MANPATH="/usr/local/man:$MANPATH"
 export GOPATH="$HOME/.gopath"
 
+#█▓▒░ rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+#█▓▒░ mac specific paths
 if [[ "$(uname -s)" == "Darwin" ]]; then
   export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/share/npm/bin:/usr/local/opt/go/libexec/bin:$PATH"
   export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
