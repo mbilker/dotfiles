@@ -1,6 +1,6 @@
 set $mod Mod1
 
-font pango:xos4 Terminus 9
+font pango:xos4 Terminus 6
 #font pango:Terminus 9
 
 floating_modifier $mod
@@ -28,10 +28,10 @@ bindsym XF86AudioLowerVolume exec amixer set Master 2%-
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 7
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 7
-bindsym XF86MonBrightnessUp exec /opt/scripts/intel_backlight.sh up
-bindsym XF86MonBrightnessDown exec /opt/scripts/intel_backlight.sh down
+bindsym XF86MonBrightnessUp exec xbacklight -inc 7
+bindsym XF86MonBrightnessDown exec xbacklight -dec 7
+#bindsym XF86MonBrightnessUp exec /opt/scripts/intel_backlight.sh up
+#bindsym XF86MonBrightnessDown exec /opt/scripts/intel_backlight.sh down
 
 bindsym XF86KbdBrightnessUp exec kbdlight up 50
 bindsym XF86KbdBrightnessDown exec kbdlight down 50
@@ -120,7 +120,8 @@ bindsym $mod+r mode "resize"
 # Floating enabled for...
 for_window [title=Qsynth] floating enable
 for_window [class="milkytracker"] floating enable
-for_window [class="Qjackctl"] floating enable
+for_window [class="jackctl"] floating enable
+for_window [class="Jack-rack"] floating enable
 
 for_window [title="Preferences$"] floating enable
 for_window [window_role="pop-up"] floating enable
@@ -129,11 +130,11 @@ for_window [window_role="About"] floating enable
 for_window [class="Gtkdialog" instance="gtkdialog"] floating enable
 
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
-exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
+exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/bin/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
 exec --no-startup-id /usr/bin/ibus-daemon --xim -d
 exec --no-startup-id /usr/bin/feh --bg-fill --randomize --recursive ~/.wallpaper
 exec --no-startup-id /usr/bin/xcalib -d :0 ~/.icc/default.icc
 exec --no-startup-id /usr/bin/xrdb -merge ~/.Xresources
-exec --no-startup-id /usr/bin/systemctl --user restart graphical.target
+exec --no-startup-id systemctl --user restart graphical.target
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
