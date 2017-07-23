@@ -311,7 +311,7 @@ animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 2
+thermal-zone = 1
 warn-temperature = 70
 
 format = <ramp> <label>
