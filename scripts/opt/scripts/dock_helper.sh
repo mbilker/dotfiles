@@ -10,8 +10,12 @@ SECOND_EXTERNAL_SETTING="nvidia-auto-select +${FIRST_EXTERNAL_HORIZONTAL_SIZE}+0
 PRIMARY_EXTERNAL="${SECOND_EXTERNAL}"
 EXTERNAL_METAMODE="${FIRST_EXTERNAL}: ${FIRST_EXTERNAL_SETTING} { ForceFullCompositionPipeline = On }, ${SECOND_EXTERNAL}: ${SECOND_EXTERNAL_SETTING} { ForceFullCompositionPipeline = On }"
 #EXTERNAL_METAMODE="${FIRST_EXTERNAL}: ${FIRST_EXTERNAL_SETTING} { ForceFullCompositionPipeline = On }"
-#LCD_SCREEN="DP-4"
-LCD_SCREEN="eDP-1-1"
+
+if [[ -z "$(/usr/sbin/lspci | grep "HD Graphics")" ]]; then
+  LCD_SCREEN="DP-4"
+else
+  LCD_SCREEN="eDP-1-1"
+fi
 
 TRACKPOINT="TPPS/2 IBM TrackPoint"
 TOUCHPAD="SynPS/2 Synaptics TouchPad"
