@@ -13,7 +13,7 @@ EXTERNAL="Wacom Bamboo One S Pen stylus"
 AREAX=14720
 AREAY=9225
 
-PERCENTAGE=0.25
+PERCENTAGE=0.27
 
 xsetwacom --set "$TOUCHSCREEN" MapToOutput HEAD-0
 xsetwacom --set "$EXTERNAL" MapToOutput HEAD-0
