@@ -3,6 +3,7 @@ Description=Dropbox
 
 [Service]
 ExecStart=/opt/bin/dropbox
+RemainAfterExit=yes
 
 [Install]
 WantedBy=graphical.target
