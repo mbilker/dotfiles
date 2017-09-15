@@ -4,6 +4,7 @@ irssi/.irssi/znc.pem
 mpd/.mpd/database
 mpd/.mpd/log
 mpd/.mpd/pid
+mpd/.mpd/playlists
 mpd/.mpd/state
 ncmpcpp/.ncmpcpp/error.log
 not-used/ranger/.config/ranger/bookmarks
