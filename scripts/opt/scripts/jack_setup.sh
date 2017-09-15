@@ -11,6 +11,9 @@ pacmd load-module module-jack-source channels=2
 # set PulseAudio default sink to JACK
 pacmd set-default-sink jack_out
 
+# Setup JACK Rack
+jack-rack -c 1 -i /home/felix/jack/rack/scarlett.rack &
+
 # loop client creation
 #/usr/bin/alsa_out -j ploop -dploop -q 1 2>&1 1>/dev/null &
 #/usr/bin/alsa_in -j  cloop -dcloop -q 1 2>&1 1>/dev/null &
