@@ -25,8 +25,8 @@ bindsym XF86LaunchA exec mpc toggle
 #bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 bindsym XF86AudioRaiseVolume exec amixer set Master 2%+
 bindsym XF86AudioLowerVolume exec amixer set Master 2%-
-bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86AudioMicMute exec amixer set Capture toggle
+bindsym XF86AudioMute exec amixer -c PCH set Master toggle
+bindsym XF86AudioMicMute exec amixer -c PCH set Capture toggle
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 7
 bindsym XF86MonBrightnessDown exec xbacklight -dec 7
@@ -47,6 +47,8 @@ bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i 
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'Terminus-9'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
 
 bindsym Pause exec "sleep 0.5; xset dpms force standby"
+
+bindsym Mod4+l exec xscreensaver-command -lock
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -128,6 +130,8 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="About"] floating enable
 for_window [class="Gtkdialog" instance="gtkdialog"] floating enable
+
+for_window [title="Sakura Swim Club"] floating enable
 
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/bin/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
