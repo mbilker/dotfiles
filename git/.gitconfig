@@ -1,6 +1,6 @@
 [user]
 	email = me@mbilker.us
-	name = mbilker
+	name = Matt Bilker
 	signingkey = 69ADF8AEB6C8B5D1
 [alias]
 	graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%C(blue)%x20(%ce)%x20%C(cyan)[gpg:%GK%x20%G?]%C(reset)%n%x20%s%n"
