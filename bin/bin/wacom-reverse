@@ -3,13 +3,20 @@
 set -x
 
 TOUCHSCREEN="Wacom Co.,Ltd. Pen and multitouch sensor Finger touch"
+TOUCHSCREEN_PEN_STYLUS="Wacom Co.,Ltd. Pen and multitouch sensor Pen stylus"
+TOUCHSCREEN_PEN_ERASER="Wacom Co.,Ltd. Pen and multitouch sensor Pen eraser"
 EXTERNAL="Wacom Bamboo One S Pen stylus"
 
 if [[ "x$1" == "xreset" ]]; then
   xsetwacom set "$TOUCHSCREEN" Rotate none
+  xsetwacom set "$TOUCHSCREEN_PEN_STYLUS" Rotate none
+  xsetwacom set "$TOUCHSCREEN_PEN_ERASER" Rotate none
+
   xsetwacom set "$EXTERNAL" Rotate none
 elif [[ "x$1" == "xscreen" ]]; then
   xsetwacom set "$TOUCHSCREEN" Rotate half
+  xsetwacom set "$TOUCHSCREEN_PEN_STYLUS" Rotate half
+  xsetwacom set "$TOUCHSCREEN_PEN_ERASER" Rotate half
 else
   xsetwacom set "$EXTERNAL" Rotate half
 fi
