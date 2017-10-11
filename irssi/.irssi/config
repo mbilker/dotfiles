@@ -188,7 +188,7 @@ settings = {
     nick = "mbilker";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "nixers.theme"; bell_beeps = "no"; };
+  "fe-common/core" = { theme = "nixers.theme"; };
   "irc/dcc" = { dcc_autoget = "yes"; };
 };
 keyboard = ( );
@@ -202,6 +202,5 @@ servers = (
     use_ssl = "yes";
     ssl_cert = "~/.irssi/znc.pem";
     ssl_verify = "yes";
-    autoconnect = "yes";
   }
 );
