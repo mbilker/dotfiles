@@ -48,7 +48,11 @@ bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i 
 
 bindsym Pause exec "sleep 0.5; xset dpms force standby"
 
-bindsym Mod4+l exec xscreensaver-command -lock
+bindsym Mod4+Prior exec xrandr --output DP-4 --rotate normal
+bindsym Mod4+Next exec xrandr --output DP-4 --rotate inverted
+
+#bindsym Mod4+l exec xscreensaver-command -lock
+bindsym Mod4+l exec ~/bin/lock
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
