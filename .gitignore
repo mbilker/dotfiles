@@ -16,3 +16,4 @@ ssh/.ssh/id_*
 ssh/.ssh/known_hosts
 vim/.vim/bundle/
 mpv/.config/mpv/watch_later/
+fonts/.fonts/Arial*.ttf
