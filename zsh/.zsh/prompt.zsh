@@ -44,8 +44,13 @@ fi
 
 #█▓▒░ ssh host info
 USER_HOST_INFO() {
+  MY_HOSTNAME="$(hostname -s)"
+  if [ -n "$SHORT_HOSTNAME" ]; then
+    MY_HOSTNAME="${HOST}"
+  fi
+
   if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ "$USER" = "root" ]; then
-    echo -n "${USER_LEVEL}[%F{yellow}${HOST}${USER_LEVEL}]"
+    echo -n "${USER_LEVEL}[%F{yellow}${MY_HOSTNAME}${USER_LEVEL}]"
   fi
 }
 
