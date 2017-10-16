@@ -1,5 +1,5 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.4.5" name="scarlett">
+<patchbay name="scarlett" version="0.4.5">
  <output-sockets>
   <socket type="jack-audio" client="system" name="Input 1" exclusive="off">
    <plug>capture_1</plug>
@@ -39,11 +39,11 @@
  </input-sockets>
  <slots/>
  <cables>
-  <cable type="jack-audio" output="Input 1" input="JACK Rack Input 1"/>
-  <cable type="jack-audio" output="Input 1" input="JACK Rack Input 2"/>
-  <cable type="jack-audio" output="osu" input="OBS osu audio"/>
-  <cable type="jack-audio" output="ALSA Loopback Playback" input="System Output"/>
-  <cable type="jack-audio" output="JACK Rack" input="PulseAudio Source"/>
+  <cable input="JACK Rack Input 1" type="jack-audio" output="Input 1"/>
+  <cable input="JACK Rack Input 2" type="jack-audio" output="Input 1"/>
+  <cable input="OBS osu audio" type="jack-audio" output="osu"/>
+  <cable input="System Output" type="jack-audio" output="ALSA Loopback Playback"/>
+  <cable input="PulseAudio Source" type="jack-audio" output="JACK Rack"/>
  </cables>
 </patchbay>
 
