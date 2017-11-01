@@ -129,6 +129,8 @@ for_window [class="milkytracker"] floating enable
 for_window [class="jackctl"] floating enable
 for_window [class="Jack-rack"] floating enable
 
+for_window [title="Mixer"] floating enable
+
 for_window [title="Preferences$"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
