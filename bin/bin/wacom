@@ -14,7 +14,7 @@ EXTERNAL="Wacom Graphire4 6x8 Pen stylus"
 AREAX=14720
 AREAY=9225
 
-PERCENTAGE=0.28
+PERCENTAGE=0.30
 
 xsetwacom --set "$TOUCHSCREEN" MapToOutput HEAD-0
 xsetwacom --set "$EXTERNAL" MapToOutput HEAD-0
