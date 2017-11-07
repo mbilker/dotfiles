@@ -16,7 +16,7 @@ jack-rack -c 1 -i /home/felix/jack/rack/scarlett.rack &
 
 # loop client creation
 #/usr/bin/alsa_out -j ploop -dploop -q 1 2>&1 1>/dev/null &
-#/usr/bin/alsa_in -j  cloop -dcloop -q 1 2>&1 1>/dev/null &
+/usr/bin/alsa_in -j  cloop -dcloop -q 1 2>&1 1>/dev/null &
 
 # osu loop client creation
 #/usr/bin/alsa_in -j osu -dosu_capture -q 1 2>&1 1>/dev/null &
@@ -25,8 +25,8 @@ jack-rack -c 1 -i /home/felix/jack/rack/scarlett.rack &
 sleep 1
 
 # cloop ports -> jack output ports
-#jack_connect cloop:capture_1 system:playback_1
-#jack_connect cloop:capture_2 system:playback_2
+jack_connect cloop:capture_1 system:playback_1
+jack_connect cloop:capture_2 system:playback_2
 
 # osu ports -> jack output ports
 #jack_connect osu:capture_1 system:playback_1
