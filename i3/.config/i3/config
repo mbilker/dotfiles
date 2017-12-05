@@ -41,13 +41,8 @@ bindsym control+Shift+3 exec "scrot -q 100 $HOME'/Pictures/Screenshots/%Y-%m-%d-
 #bindsym Shift+Print exec "scrot -q 100 -u $HOME'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 $f'"
 bindsym control+Shift+5 exec "scrot -q 100 -u $HOME'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 $f'"
 
-#bindsym $mod+d exec dmenu_run
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'Terminus-9'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
-#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'xos4 Terminus-8'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
 bindsym $mod+d exec rofi -show drun
-
-#bindsym Pause exec "sleep 0.5; xset dpms force standby"
 
 bindsym Mod4+Prior exec xrandr --output DP-4 --rotate normal
 bindsym Mod4+Next exec xrandr --output DP-4 --rotate inverted
