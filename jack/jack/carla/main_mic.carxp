@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CARLA-PROJECT>
+<CARLA-PROJECT VERSION='2.0'>
+ <EngineSettings>
+  <ForceStereo>false</ForceStereo>
+  <PreferPluginBridges>false</PreferPluginBridges>
+  <PreferUiBridges>true</PreferUiBridges>
+  <UIsAlwaysOnTop>false</UIsAlwaysOnTop>
+  <MaxParameters>200</MaxParameters>
+  <UIBridgesTimeout>4000</UIBridgesTimeout>
+ </EngineSettings>
+
+ <!-- Simple Expander (RMS Envelope Tracking) -->
+ <Plugin>
+  <Info>
+   <Type>LADSPA</Type>
+   <Name>Simple Expander (RMS Envel</Name>
+   <Binary>/usr/lib64/ladspa/cmt.so</Binary>
+   <Label>expand_rms</Label>
+   <UniqueID>1075</UniqueID>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <Volume>0.999998</Volume>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Threshold</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Expansion Ratio</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Output Envelope Attack</Name>
+    <Value>0.300000011920929</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Output Envelope Decay</Name>
+    <Value>0.200000002980232</Value>
+   </Parameter>
+
+   <CustomData>
+    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
+    <Key>CarlaSkinIsCompacted</Key>
+    <Value>false</Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
+ <!-- Simple Compressor (RMS Envelope Tracking) -->
+ <Plugin>
+  <Info>
+   <Type>LADSPA</Type>
+   <Name>Simple Compressor (RMS Env</Name>
+   <Binary>/usr/lib64/ladspa/cmt.so</Binary>
+   <Label>compress_rms</Label>
+   <UniqueID>1073</UniqueID>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Threshold</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Compression Ratio</Name>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Output Envelope Attack</Name>
+    <Value>0.100000001490116</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Output Envelope Decay</Name>
+    <Value>0.200000002980232</Value>
+   </Parameter>
+
+   <CustomData>
+    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
+    <Key>CarlaSkinIsCompacted</Key>
+    <Value>false</Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
+ <!-- Amplifier (Mono) -->
+ <Plugin>
+  <Info>
+   <Type>LADSPA</Type>
+   <Name>Amplifier (Mono)</Name>
+   <Binary>/usr/lib64/ladspa/cmt.so</Binary>
+   <Label>amp_mono</Label>
+   <UniqueID>1067</UniqueID>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Gain</Name>
+    <Value>1</Value>
+   </Parameter>
+  </Data>
+ </Plugin>
+
+ <!-- Simple Limiter (RMS Envelope Tracking) -->
+ <Plugin>
+  <Info>
+   <Type>LADSPA</Type>
+   <Name>Simple Limiter (RMS Envelo</Name>
+   <Binary>/usr/lib64/ladspa/cmt.so</Binary>
+   <Label>limit_rms</Label>
+   <UniqueID>1077</UniqueID>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Threshold</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Output Envelope Attack</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Output Envelope Decay</Name>
+    <Value>1</Value>
+   </Parameter>
+  </Data>
+ </Plugin>
+
+ <ExternalPatchbay>
+  <Connection>
+   <Source>system:capture_1</Source>
+   <Target>Carla:audio-in1</Target>
+  </Connection>
+  <Connection>
+   <Source>system:capture_1</Source>
+   <Target>jack_rack:in_2</Target>
+  </Connection>
+  <Connection>
+   <Source>system:capture_1</Source>
+   <Target>jack_rack:in_1</Target>
+  </Connection>
+  <Connection>
+   <Source>PulseAudio JACK Sink:front-left</Source>
+   <Target>system:playback_1</Target>
+  </Connection>
+  <Connection>
+   <Source>PulseAudio JACK Sink:front-right</Source>
+   <Target>system:playback_2</Target>
+  </Connection>
+  <Connection>
+   <Source>jack_rack:out_1</Source>
+   <Target>system:playback_1</Target>
+  </Connection>
+  <Connection>
+   <Source>jack_rack:out_1</Source>
+   <Target>PulseAudio JACK Source:front-left</Target>
+  </Connection>
+  <Connection>
+   <Source>cloop:capture_1</Source>
+   <Target>system:playback_1</Target>
+  </Connection>
+  <Connection>
+   <Source>cloop:capture_2</Source>
+   <Target>system:playback_2</Target>
+  </Connection>
+  <Connection>
+   <Source>jack_rack:out_2</Source>
+   <Target>system:playback_2</Target>
+  </Connection>
+  <Connection>
+   <Source>jack_rack:out_2</Source>
+   <Target>PulseAudio JACK Source:front-right</Target>
+  </Connection>
+  <Connection>
+   <Source>Music Player Daemon:left</Source>
+   <Target>system:playback_1</Target>
+  </Connection>
+  <Connection>
+   <Source>Music Player Daemon:right</Source>
+   <Target>system:playback_2</Target>
+  </Connection>
+ </ExternalPatchbay>
+</CARLA-PROJECT>
