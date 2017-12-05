@@ -18,3 +18,5 @@ vim/.vim/bundle/
 vim/.vim/undo/
 mpv/.config/mpv/watch_later/
 fonts/.fonts/Arial*.ttf
+fonts/.fonts/reve.ttf
+fonts/.fonts/Serpentine*Sans*ICG*.ttf
