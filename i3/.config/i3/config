@@ -43,6 +43,7 @@ bindsym control+Shift+5 exec "scrot -q 100 -u $HOME'/Pictures/Screenshots/%Y-%m-
 
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'Terminus-9'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
 bindsym $mod+d exec rofi -show drun
+bindsym $mod+Shift+d exec rofi -show window
 
 bindsym Mod4+Prior exec xrandr --output DP-4 --rotate normal
 bindsym Mod4+Next exec xrandr --output DP-4 --rotate inverted
@@ -134,6 +135,9 @@ for_window [window_role="About"] floating enable
 for_window [class="Gtkdialog" instance="gtkdialog"] floating enable
 
 for_window [title="Sakura Swim Club"] floating enable
+
+# Force Thunderbird to mail workspace
+assign [class="Thunderbird"] 10 mail
 
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/bin/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
