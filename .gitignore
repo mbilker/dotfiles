@@ -14,7 +14,6 @@ not-used/ranger/.config/ranger/history
 not-used/ranger/.config/ranger/tagged
 ssh/.ssh/id_*
 ssh/.ssh/known_hosts
-vim/.vim/bundle/
 vim/.vim/undo/
 mpv/.config/mpv/watch_later/
 fonts/.fonts/Arial*.ttf
