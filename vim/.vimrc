@@ -44,17 +44,14 @@ filetype plugin indent on
 " CUSTOM COMMANDS AND FUNCTIONS
 " ----------------------------------------------------------------------------
 
+" Trim spaces at EOL and retab. I run `:CLEAN` a lot to clean up files.
 command! TEOL %s/\s\+$//
+command! CLEAN retab | TEOL
 
 " ----------------------------------------------------------------------------
 " PLUGIN SETTINGS
 " ----------------------------------------------------------------------------
 
-" GitGutter styling to use · instead of +/-
-let g:gitgutter_sign_added = '∙'
-let g:gitgutter_sign_modified = '∙'
-let g:gitgutter_sign_removed = '∙'
-let g:gitgutter_sign_modified_removed = '∙'
 
 " ----------------------------------------------------------------------------
 " COLORS
