@@ -52,6 +52,28 @@ command! CLEAN retab | TEOL
 " PLUGIN SETTINGS
 " ----------------------------------------------------------------------------
 
+" Turn off Rust overriding tab size
+let g:rust_recommended_style = 0
+
+" Enable ALE syntax warnings in lightline (everything else is a default)
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'right': [ [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
+      \              [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+      \ },
+      \ 'component_expand': {
+      \   'linter_warnings': 'lightline#ale#warnings',
+      \   'linter_errors': 'lightline#ale#errors',
+      \   'linter_ok': 'lightline#ale#ok',
+      \ },
+      \ 'component_type': {
+      \   'linter_warnings': 'warning',
+      \   'linter_errors': 'error',
+      \ },
+      \ }
 
 " ----------------------------------------------------------------------------
 " COLORS
@@ -75,3 +97,14 @@ highlight SpecialKey ctermbg=Yellow guibg=Yellow
 highlight clear SignColumn
 highlight link SignColumn Ignore
 
+" ----------------------------------------------------------------------------
+" FILE TYPE TRIGGERS
+" ----------------------------------------------------------------------------
+
+" Reset all autocommands
+augroup vimrc
+autocmd!
+
+"au BufNewFile,BufRead *.rs  setlocal ft=rust shiftwidth=2 ts=2
+
+augroup END
