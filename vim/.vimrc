@@ -90,6 +90,9 @@ if !has('gui_running')
 endif
 syntax on
 
+" Make background transparent
+highlight Normal guibg=NONE ctermbg=NONE
+
 " Make trailing spaces very visible
 highlight SpecialKey ctermbg=Yellow guibg=Yellow
 
