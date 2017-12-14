@@ -87,6 +87,10 @@ if !has('gui_running')
   if $TERM == "xterm-256color" || $TERM == "screen-256color" || $TERM == "xterm-termite" || $COLORTERM == "gnome-terminal"
     set t_Co=256
   endif
+  " Disable Background Color Erase when within tmux - https://stackoverflow.com/q/6427650/102704
+  if $TMUX != ""
+    set t_ut=
+  endif
 endif
 syntax on
 
