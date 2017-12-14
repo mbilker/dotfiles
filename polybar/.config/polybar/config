@@ -92,7 +92,7 @@ tray-position = right
 tray-padding = 2
 
 modules-left = i3
-modules-right = filesystem volume cpu wlan eth battery temperature date
+modules-right = mpd filesystem volume cpu wlan eth battery temperature date
 
 [bar/top]
 inherit = bar/bar
@@ -179,11 +179,14 @@ ramp-volume-2 = 
 
 [module/mpd]
 type = internal/mpd
-format-online = 「<label-song>」  <icon-prev> <icon-stop> <toggle> <icon-next>  《<label-time>》
 ;format-online = <label-song>  <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <label-time>
+;format-online = 「<label-song>」  <icon-prev> <icon-stop> <toggle> <icon-next>  《<label-time>》
+format-online = 「 <label-song> 」《 <label-time> 》
+format-online-underline = ${colors.magenta}
 
 format-offline = <label-offline>
 format-offline-foreground = #66
+format-offline-underline = ${colors.magenta}
 
 label-offline = mpd is off
 
