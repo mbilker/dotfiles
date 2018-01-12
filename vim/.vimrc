@@ -83,10 +83,16 @@ let g:lightline = {
 set background=dark
 colorscheme base16-onedark
 if !has('gui_running')
-  let base16colorspace=256  " Access colors present in 256 colorspace
-  if $TERM == "xterm-256color" || $TERM == "screen-256color" || $TERM == "xterm-termite" || $COLORTERM == "gnome-terminal"
+  " workaround for tmux Ctrl-Left and Ctrl-Right support
+  if $TERM == "tmux-256color"
+    set term=xterm-256color
+  endif
+
+  if $TERM == "tmux-256color" || $TERM == "xterm-256color" || $TERM == "screen-256color" || $TERM == "xterm-termite" || $COLORTERM == "gnome-terminal"
+    let base16colorspace=256  " Access colors present in 256 colorspace
     set t_Co=256
   endif
+
   " Disable Background Color Erase when within tmux - https://stackoverflow.com/q/6427650/102704
   if $TMUX != ""
     set t_ut=
