@@ -19,7 +19,7 @@
 #HIST_STAMPS=mm/dd/yyyy
 
 #█▓▒░ paths
-export PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
+export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 export PATH="$HOME/bin:$HOME/.gopath/bin:$PATH"
 #export MANPATH="/usr/local/man:$MANPATH"
 export GOPATH="$HOME/.gopath"
