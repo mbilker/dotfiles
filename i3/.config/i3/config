@@ -1,4 +1,5 @@
 set $mod Mod1
+set $mod2 Mod4
 
 font pango:xos4 Terminus 6
 #font pango:Terminus 9
@@ -86,6 +87,8 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 
 bindsym $mod+c workspace 10 mail
+bindsym $mod2+2 workspace 11 discord
+bindsym $mod2+3 workspace 12 chrome
 
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
@@ -138,8 +141,10 @@ for_window [class="Gtkdialog" instance="gtkdialog"] floating enable
 
 for_window [title="Sakura Swim Club"] floating enable
 
-# Force Thunderbird to mail workspace
+# Application-specific workspaces
 assign [class="Thunderbird"] 10 mail
+assign [class="discord"] 11 discord
+assign [class="chromium-browser-chromium"] 12 chrome
 
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/env SSH_ASKPASS=/usr/bin/x11-ssh-askpass /usr/bin/keychain --agents ssh ~/.ssh/id_ed25519
