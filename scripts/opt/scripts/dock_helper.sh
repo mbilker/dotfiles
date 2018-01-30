@@ -28,7 +28,7 @@ fi
 
 TRACKPOINT="TPPS/2 IBM TrackPoint"
 TOUCHPAD="SynPS/2 Synaptics TouchPad"
-TOUCHSCREEN="Wacom Co.,Ltd. Pen and multitouch sensor Finger touch"
+TOUCHSCREEN="Wacom Pen and multitouch sensor Finger touch"
 
 logger "Running dock/undock script"
 
