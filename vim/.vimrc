@@ -7,6 +7,17 @@
 "
 
 " ----------------------------------------------------------------------------
+" KEY MAPS
+" ----------------------------------------------------------------------------
+
+" Turn off linewise keys. Normally, the `j' and `k' keys move the cursor down one entire line. with
+" line wrapping on, this can cause the cursor to actually skip a few lines on the screen because
+" it's moving from line N to line N+1 in the file. I want this to act more visually -- I want `down'
+" to mean the next line on the screen
+nmap j gj
+nmap k gk
+
+" ----------------------------------------------------------------------------
 " OPTIONS
 " ----------------------------------------------------------------------------
 
@@ -25,14 +36,19 @@ set hidden                      " Don't prompt to save hidden windows until exit
 set history=200                 " How many lines of history to save
 set hlsearch                    " Hilight searching
 set ignorecase                  " Case insensitive
-set incsearch                   " Search as you typeh
+set incsearch                   " Search as you type
 set infercase                   " Completion recognizes capitalization
 set laststatus=2                " Always show the status bar
 set linebreak                   " Break long lines by word, not char
 set list                        " Show whitespace as special chars - see listchars
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " Unicode characters for various things
 set number                      " Show line numbers
+set scroll=4                    " Number of lines to scroll with ^U/^D
+set scrolloff=15                " Keep cursor away from this many chars top/bottom
+set shiftround                  " Shift to certain columns, not just n spaces
 set shiftwidth=2                " Number of spaces to shift for autoindent or >,<
+set showmatch                   " Highlight matching braces/parens/etc
+set sidescrolloff=3             " Keep cursor away from this many chars left/right
 set smartcase                   " Lets you search for ALL CAPS
 set softtabstop=2               " Spaces 'feel' like tabs
 set tabstop=2                   " The One True Tab
