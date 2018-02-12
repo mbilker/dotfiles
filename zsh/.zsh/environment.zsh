@@ -39,8 +39,8 @@ if [[ "$(uname -s)" == "FreeBSD" ]] && [[ "${TERM}" == "xterm-termite" ]]; then
 fi
 
 #█▓▒░ preferred editor for local and remote sessions
-export EDITOR=nano
-export VISUAL=nano
+export EDITOR=vim
+export VISUAL=vim
 
 #█▓▒░ language
 LANG=en_US.UTF-8
