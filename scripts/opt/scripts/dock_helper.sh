@@ -30,7 +30,7 @@ TRACKPOINT="TPPS/2 IBM TrackPoint"
 TOUCHPAD="SynPS/2 Synaptics TouchPad"
 TOUCHSCREEN="Wacom Pen and multitouch sensor Finger touch"
 
-logger "Running dock/undock script"
+logger "Running dock/undock script on display ${DISPLAY}"
 
 TRACKPOINT_IDS=$(xinput --list | awk -v search="$TRACKPOINT" \
   '$0 ~ search { match($0, /id=[0-9]+/); \
