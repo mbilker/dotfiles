@@ -62,7 +62,7 @@ alias lol="base64 </dev/urandom | lolcat"
 alias ZZ="quit"
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 alias todo="bash ~/code/sys/todo"
-alias open="gvfs-open"
+alias open="gio open"
 
 #█▓▒░ dumb tmux trix
 alias tsad="printf '\033k┐(T_T)┌\033\\'"
