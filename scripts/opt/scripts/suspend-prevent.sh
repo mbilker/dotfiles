@@ -16,7 +16,7 @@ case "$1" in
     ;;
 
   --forever)
-    /usr/bin/systemd-inhibit --what=handle-lid-switch:sleep --who=$(id -un $(whoami)) --why="Prevent suspend on lid close when on AC" --mode=block /bin/bash -c "while true; do sleep 999999; done"
+    /bin/systemd-inhibit --what=handle-lid-switch:sleep --who=$(id -un $(whoami)) --why="Prevent suspend on lid close when on AC" --mode=block /bin/bash -c "while true; do sleep 999999; done"
     ;;
 
   -h|--help|help)
