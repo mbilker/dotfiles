@@ -2,7 +2,7 @@
 
 # From: https://nrocco.github.io/2014/06/05/suspend-prevent-systemd.html
 
-SYSTEMCTL="/usr/bin/systemctl"
+SYSTEMCTL="/bin/systemctl"
 
 case "$1" in
   battery)
