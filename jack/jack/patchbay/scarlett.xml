@@ -1,72 +1,72 @@
 <!DOCTYPE patchbay>
-<patchbay name="scarlett" version="0.4.5">
+<patchbay version="0.4.5" name="scarlett">
  <output-sockets>
-  <socket name="Input 1" type="jack-audio" exclusive="off" client="system">
-   <plug>capture_1</plug>
+  <socket type="jack-audio" client="system" name="Input 2" exclusive="off">
+   <plug>capture_2</plug>
   </socket>
-  <socket name="MPD" type="jack-audio" exclusive="off" client="Music Player Daemon">
+  <socket type="jack-audio" client="Music Player Daemon" name="MPD" exclusive="off">
    <plug>left</plug>
    <plug>right</plug>
   </socket>
-  <socket name="cloop" type="jack-audio" exclusive="off" client="cloop">
+  <socket type="jack-audio" client="cloop" name="cloop" exclusive="off">
    <plug>capture_1</plug>
    <plug>capture_2</plug>
   </socket>
-  <socket name="Milkytracker" type="jack-audio" exclusive="off" client="Milkytracker">
+  <socket type="jack-audio" client="Milkytracker" name="Milkytracker" exclusive="off">
    <plug>Left</plug>
    <plug>Right</plug>
   </socket>
-  <socket name="osu" type="jack-audio" exclusive="off" client="osu">
+  <socket type="jack-audio" client="osu" name="osu" exclusive="off">
    <plug>capture_1</plug>
    <plug>capture_2</plug>
   </socket>
-  <socket name="ALSA Loopback Playback" type="jack-audio" exclusive="off" client="cloop">
+  <socket type="jack-audio" client="cloop" name="ALSA Loopback Playback" exclusive="off">
    <plug>capture_1</plug>
    <plug>capture_2</plug>
   </socket>
-  <socket name="JACK Rack" type="jack-audio" exclusive="off" client="jack_rack">
+  <socket type="jack-audio" client="jack_rack" name="JACK Rack" exclusive="off">
    <plug>out_1</plug>
    <plug>out_2</plug>
   </socket>
  </output-sockets>
  <input-sockets>
-  <socket name="OBS music audio" type="jack-audio" exclusive="off" client="obs_music">
+  <socket type="jack-audio" client="obs_music" name="OBS music audio" exclusive="off">
    <plug>in_1</plug>
    <plug>in_2</plug>
   </socket>
-  <socket name="OBS osu audio" type="jack-audio" exclusive="off" client="osu audio">
+  <socket type="jack-audio" client="osu audio" name="OBS osu audio" exclusive="off">
    <plug>in_1</plug>
    <plug>in_2</plug>
   </socket>
-  <socket name="OBS cloop audio" type="jack-audio" exclusive="off" client="cloop obs audio">
+  <socket type="jack-audio" client="cloop obs audio" name="OBS cloop audio" exclusive="off">
    <plug>in_1</plug>
    <plug>in_2</plug>
   </socket>
-  <socket name="System Output" type="jack-audio" exclusive="off" client="system">
+  <socket type="jack-audio" client="system" name="System Output" exclusive="off">
    <plug>playback_1</plug>
    <plug>playback_2</plug>
   </socket>
-  <socket name="JACK Rack Input 1" type="jack-audio" exclusive="off" client="jack_rack">
+  <socket type="jack-audio" client="jack_rack" name="JACK Rack Input 1" exclusive="off">
    <plug>in_1</plug>
   </socket>
-  <socket name="JACK Rack Input 2" type="jack-audio" exclusive="off" client="jack_rack">
+  <socket type="jack-audio" client="jack_rack" name="JACK Rack Input 2" exclusive="off">
    <plug>in_2</plug>
   </socket>
-  <socket name="PulseAudio Source" type="jack-audio" exclusive="on" client="PulseAudio JACK Source">
+  <socket type="jack-audio" client="PulseAudio JACK Source" name="PulseAudio Source" exclusive="on">
    <plug>front-left</plug>
    <plug>front-right</plug>
   </socket>
  </input-sockets>
  <slots/>
  <cables>
-  <cable output="Input 1" type="jack-audio" input="JACK Rack Input 2"/>
-  <cable output="Input 1" type="jack-audio" input="JACK Rack Input 1"/>
-  <cable output="MPD" type="jack-audio" input="OBS music audio"/>
-  <cable output="cloop" type="jack-audio" input="OBS cloop audio"/>
-  <cable output="Milkytracker" type="jack-audio" input="System Output"/>
-  <cable output="Milkytracker" type="jack-audio" input="OBS music audio"/>
-  <cable output="osu" type="jack-audio" input="OBS osu audio"/>
-  <cable output="JACK Rack" type="jack-audio" input="PulseAudio Source"/>
+  <cable type="jack-audio" output="Input 2" input="JACK Rack Input 2"/>
+  <cable type="jack-audio" output="Input 2" input="JACK Rack Input 1"/>
+  <cable type="jack-audio" output="MPD" input="OBS music audio"/>
+  <cable type="jack-audio" output="cloop" input="OBS cloop audio"/>
+  <cable type="jack-audio" output="Milkytracker" input="System Output"/>
+  <cable type="jack-audio" output="Milkytracker" input="OBS music audio"/>
+  <cable type="jack-audio" output="osu" input="OBS osu audio"/>
+  <cable type="jack-audio" output="JACK Rack" input="PulseAudio Source"/>
  </cables>
 </patchbay>
 
