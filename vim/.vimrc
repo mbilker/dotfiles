@@ -117,7 +117,7 @@ endif
 syntax on
 
 " Make background transparent
-highlight Normal guibg=NONE ctermbg=NONE
+highlight Normal guibg=black ctermbg=NONE
 
 " Make trailing spaces very visible
 highlight SpecialKey ctermbg=Yellow guibg=Yellow
