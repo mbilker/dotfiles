@@ -27,6 +27,9 @@ export GOPATH="$HOME/.gopath"
 #█▓▒░ rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+#█▓▒░ firefox
+export MOZ_USE_XINPUT2=1
+
 #█▓▒░ mac specific paths
 if [[ "$(uname -s)" == "Darwin" ]]; then
   export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/share/npm/bin:/usr/local/opt/go/libexec/bin:$PATH"
