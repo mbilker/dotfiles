@@ -37,10 +37,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 7
 bindsym XF86KbdBrightnessUp exec kbdlight up 50
 bindsym XF86KbdBrightnessDown exec kbdlight down 50
 
-bindsym control+Shift+4 exec "sleep 0.2; scrot -q 100 -s $HOME'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 $f'"
-bindsym control+Shift+3 exec "scrot -q 100 $HOME'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 $f'"
+bindsym control+Shift+4 exec "sleep 0.2; scrot -q 100 -s $HOME'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o5 -i0 $f'"
+bindsym control+Shift+3 exec "scrot -q 100 $HOME'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o5 -i0 $f'"
 #bindsym Shift+Print exec "scrot -q 100 -u $HOME'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 $f'"
-bindsym control+Shift+5 exec "scrot -q 100 -u $HOME'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o7 -i0 $f'"
+bindsym control+Shift+5 exec "scrot -q 100 -u $HOME'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'nice optipng -o5 -i0 $f'"
 
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/dmenu -i -fn 'Terminus-9'" --term=/usr/bin/termite --usage-log=$HOME/.local/share/j4-dmenu-desktop.log
 bindsym $mod+d exec rofi -show drun
