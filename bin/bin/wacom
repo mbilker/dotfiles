@@ -4,9 +4,9 @@ set -x
 
 xset m 0 0
 
-TOUCHSCREEN="Wacom Co.,Ltd. Pen and multitouch sensor Finger touch"
-EXTERNAL="Wacom Bamboo One S Pen stylus"
-#EXTERNAL="Wacom Graphire4 6x8 Pen stylus"
+TOUCHSCREEN="Wacom Pen and multitouch sensor Finger touch"
+#EXTERNAL="Wacom Bamboo One S Pen stylus"
+EXTERNAL="Wacom Graphire4 6x8 Pen stylus"
 
 # These numbers are specific for each device. Get them by running:
 # xsetwacom --set "Your device name here" ResetArea

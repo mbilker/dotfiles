@@ -1,0 +1,94 @@
+#!/bin/bash
+# optipng_multicore.sh
+# optipng wrapper to use all the cores at maximum settings.
+# Code: Zucca@dive.to Zucca@IRC (several networks)
+# Licence: I guess MIT would be ok. Just mention my contact info if you want to fork/take over.
+
+# Version 0.2.5
+
+HELPMSG="
+ = optipng spawner for multiple CPU cores =
+
+-f|--force                   Force overwriting files
+-c|--num-cpu|-t|--threads    Specify number of threads (default: automatic detection)
+-h|--help                    Umm... It's a surprise?!?
+
+Use '--' to stop searching switches."
+
+# The dirty way to get CPU count (counts HT cores as two)
+CPUCOUNT="$(grep -c ^processor /proc/cpuinfo)"
+
+####################
+## Parse cli args ##
+####################
+
+while [ "${1:0:1}" == "-" ]
+do
+    case $1 in
+        -h|--help)
+            echo "$HELPMSG"
+            exit 0
+        ;;
+        -f|--force)
+            FORCE=true
+        ;;
+        -c|--num-cpu)
+            if egrep -q '^[0-9]+$' <<< "$2"
+            then
+                CPUCOUNT="$2"
+            else
+                echo '--num-cpu option must be followed by a number argument!' >&2
+                exit 1
+            fi
+            shift
+        ;;
+        --) # Stop searching switches
+            shift # break forces to exit the loop right here
+                  # that's why we must shift here before
+            break
+        ;;
+        *)
+            echo -e "DUDE! I don't know what to do with that switch \"$1\" of yours." >&2
+            exit 1
+        ;;
+    esac
+    shift
+done
+
+for PNGIN in "$@"
+do
+
+    COUNTER=0
+    TMPDIR="$(mktemp -d)"
+
+    # Doing this "YO dawg" -loop is because one might want to change possible combinations
+    # ... and for the future development. ;)
+    for ZC in 1 2 3 8 9 # Compression levels
+    do
+        for ZM in {1..9}
+        do
+            for ZS in {0..3}
+            do
+                for F in {0..5}
+                do
+                    echo "-zc${ZC} -zm${ZM} -zs${ZS} -f${F} -i0 -out \"${TMPDIR}/${COUNTER}.png\" \"$PNGIN\"" >> "$TMPDIR/list.txt"
+                    let "COUNTER=$COUNTER+1" # It would be nice to have leding zeros but... meh.
+                done
+            done
+        done
+    done
+
+    # Start the compression
+    xargs -n 8 -P $CPUCOUNT -a "$TMPDIR/list.txt" optipng -quiet
+
+    # FIXME: a dirty way to remove all but the smallest size png. Maybe use find + stat
+    ls -Ss --block-size=1 "$TMPDIR"/*.png | head -n -1 | egrep -o "${TMPDIR}/[0-9]+\.png" | xargs rm
+
+    # Then move the rest (the only one)
+    let "WONBYTES=$(stat -c %s "$PNGIN")-$(stat -c %s "$TMPDIR"/*.png)"
+    echo "$PNGIN size reduced by $WONBYTES bytes."
+    test "$FORCE" == true && mv -f "$TMPDIR"/*.png "${PNGIN%.*}.png" || mv -i "$TMPDIR"/*.png "${PNGIN%.*}.png"
+
+    # Delete temp directory
+    rm -fr "$TMPDIR"
+done
