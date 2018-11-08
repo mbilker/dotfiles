@@ -20,7 +20,7 @@
 
 #█▓▒░ paths
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-export PATH="$HOME/bin:$HOME/.gopath/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.gopath/bin:$HOME/.local/bin:$PATH"
 #export MANPATH="/usr/local/man:$MANPATH"
 export GOPATH="$HOME/.gopath"
 
