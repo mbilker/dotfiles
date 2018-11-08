@@ -18,6 +18,7 @@
 #alias ll="ls -lahF --color=auto"
 #alias lsl="ls -lhF --color=auto"
 [[ "$(uname -s)" == "Darwin" ]] && alias ls='ls --color=tty'
+command -v exa >/dev/null 2>&1 && alias ls='exa'
 alias "cd.."="cd ../"
 alias up="cd ../"
 alias rmrf="rm -rf"
