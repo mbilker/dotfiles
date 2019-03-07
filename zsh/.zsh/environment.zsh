@@ -24,11 +24,18 @@ export PATH="$HOME/bin:$HOME/.gopath/bin:$HOME/.local/bin:$PATH"
 #export MANPATH="/usr/local/man:$MANPATH"
 export GOPATH="$HOME/.gopath"
 
-#█▓▒░ rust
+#█▓▒░ Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
-#█▓▒░ firefox
+#█▓▒░ Firefox
 export MOZ_USE_XINPUT2=1
+
+#█▓▒░ Android Studio
+# Use platform-tools versions over system-wide versions
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/tools/bin"
 
 #█▓▒░ mac specific paths
 if [[ "$(uname -s)" == "Darwin" ]]; then
