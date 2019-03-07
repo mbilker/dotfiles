@@ -7,7 +7,7 @@ allow_bold = true
 clickable_url = true
 dynamic_title = true
 scrollback_lines = 10000
-browser = chromium
+browser = firefox
 #font = xos4 Terminus 8
 font = Hack 9
 
