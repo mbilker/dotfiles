@@ -71,6 +71,9 @@ command! CLEAN retab | TEOL
 " Turn off Rust overriding tab size
 let g:rust_recommended_style = 0
 
+" Open ALE syntax warning location list
+let g:ale_open_list = 1
+
 " Enable ALE syntax warnings in lightline (everything else is a default)
 let g:lightline = {
       \ 'colorscheme': 'powerline',
@@ -95,18 +98,17 @@ let g:lightline = {
 " COLORS
 " ----------------------------------------------------------------------------
 
-" Make sure colored syntax mode is on, and make it Just Work with 256-color terminals.
-set background=dark
-colorscheme base16-onedark
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if has("termguicolors")
+  set termguicolors
+endif
+
+colorscheme angr
+
 if !has('gui_running')
   " workaround for tmux Ctrl-Left and Ctrl-Right support
-  if $TERM == "screen-256color"
+  if $TERM == "screen-256color" || $TERM == "tmux-256color"
     set term=xterm-256color
-  endif
-
-  if $TERM == "xterm-256color" || $TERM == "screen-256color" || $TERM == "xterm-termite" || $COLORTERM == "gnome-terminal"
-    let base16colorspace=256  " Access colors present in 256 colorspace
-    set t_Co=256
   endif
 
   " Disable Background Color Erase when within tmux - https://stackoverflow.com/q/6427650/102704
@@ -117,10 +119,10 @@ endif
 syntax on
 
 " Make background transparent
-highlight Normal guibg=black ctermbg=NONE
+"highlight Normal guibg=black ctermbg=NONE
 
 " Make trailing spaces very visible
-highlight SpecialKey ctermbg=Yellow guibg=Yellow
+"highlight SpecialKey ctermbg=Yellow guibg=Yellow
 
 " The sign column slows down remote terminals
 highlight clear SignColumn
@@ -134,6 +136,6 @@ highlight link SignColumn Ignore
 augroup vimrc
 autocmd!
 
-"au BufNewFile,BufRead *.rs  setlocal ft=rust shiftwidth=2 ts=2
+au BufNewFile,BufRead *.rs  setlocal ft=rust shiftwidth=2 ts=2
 
 augroup END
