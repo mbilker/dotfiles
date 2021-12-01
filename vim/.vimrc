@@ -17,6 +17,10 @@
 nmap j gj
 nmap k gk
 
+" Delete instead of cut. By default, delete with 'd' will cut the line into
+" the last register, but I do not want that.
+vnoremap d "_d
+
 " ----------------------------------------------------------------------------
 " OPTIONS
 " ----------------------------------------------------------------------------
