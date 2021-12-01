@@ -46,12 +46,12 @@ set number                      " Show line numbers
 set scroll=4                    " Number of lines to scroll with ^U/^D
 set scrolloff=15                " Keep cursor away from this many chars top/bottom
 set shiftround                  " Shift to certain columns, not just n spaces
-set shiftwidth=2                " Number of spaces to shift for autoindent or >,<
+set shiftwidth=4                " Number of spaces to shift for autoindent or >,<
 set showmatch                   " Highlight matching braces/parens/etc
 set sidescrolloff=3             " Keep cursor away from this many chars left/right
 set smartcase                   " Lets you search for ALL CAPS
-set softtabstop=2               " Spaces 'feel' like tabs
-set tabstop=2                   " The One True Tab
+set softtabstop=4               " Spaces 'feel' like tabs
+set tabstop=4                   " The One True Tab
 
 " Essential for filetype plugins.
 filetype plugin indent on
@@ -136,6 +136,7 @@ highlight link SignColumn Ignore
 augroup vimrc
 autocmd!
 
-au BufNewFile,BufRead *.rs  setlocal ft=rust shiftwidth=2 ts=2
+"au BufNewFile,BufRead *.rs  setlocal ft=rust shiftwidth=2 ts=2
+au BufNewFile,BufRead *.ts  setlocal shiftwidth=2 ts=2
 
 augroup END
